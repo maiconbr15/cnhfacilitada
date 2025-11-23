@@ -1,0 +1,378 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f4f6fb;
+  color: #222;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  background: linear-gradient(135deg, #1f4cff, #00b0ff);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.top-bar {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 20px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.logo span {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.top-contact {
+  font-size: 0.85rem;
+  text-align: right;
+}
+
+.top-contact a {
+  color: #fff;
+  font-weight: bold;
+}
+
+nav {
+  border-top: 1px solid rgba(255,255,255,0.25);
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8px 20px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-inner a {
+  font-size: 0.9rem;
+  color: #e6ecff;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.nav-inner a:hover,
+.nav-inner a.active {
+  background-color: rgba(255,255,255,0.15);
+}
+
+/* Layout básico das páginas */
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+  gap: 30px;
+  align-items: center;
+  padding: 34px 20px;
+}
+
+.hero-bg {
+  background: radial-gradient(circle at top left, #e4ecff, #f4f6fb);
+}
+
+.hero h1 {
+  font-size: 2.1rem;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.hero h1 span {
+  color: #1f4cff;
+}
+
+.hero p {
+  margin-bottom: 16px;
+  color: #444;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.badge {
+  background-color: #e8f0ff;
+  color: #1f4cff;
+  font-size: 0.8rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #c8d7ff;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.btn-primary {
+  background-color: #1f4cff;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.95rem;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #1f4cff;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid #1f4cff;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+.hero-small {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.hero-box {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+/* Seções genéricas */
+
+.section-title {
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 18px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  border: 1px solid #e3e7f1;
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.card strong {
+  color: #1f4cff;
+}
+
+/* Listas e passos */
+
+.steps {
+  list-style: none;
+  counter-reset: step-counter;
+  padding-left: 0;
+}
+
+.steps li {
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.04);
+  border: 1px solid #e3e7f1;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.steps li::before {
+  counter-increment: step-counter;
+  content: counter(step-counter) ". ";
+  font-weight: 700;
+  color: #1f4cff;
+}
+
+/* FAQ */
+
+.faq-item {
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid #e3e7f1;
+}
+
+.faq-item strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #111;
+}
+
+/* Contato */
+
+.contact-box {
+  background: #1f4cff;
+  color: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.2fr);
+  gap: 20px;
+  align-items: center;
+}
+
+.contact-info p {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.contact-info a {
+  color: #fff;
+  font-weight: bold;
+}
+
+.contact-whats {
+  text-align: center;
+}
+
+.contact-whats .btn-primary {
+  background-color: #25d366;
+  color: #fff;
+  font-size: 1rem;
+  padding: 12px 18px;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.contact-whats span {
+  font-size: 0.85rem;
+  display: block;
+  opacity: 0.9;
+}
+
+/* Formulário */
+
+form {
+  background-color: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  border: 1px solid #e3e7f1;
+  max-width: 600px;
+}
+
+form .field {
+  margin-bottom: 12px;
+}
+
+form label {
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #ced4e5;
+}
+
+form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* Rodapé */
+
+footer {
+  padding: 14px 20px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 20px;
+}
+
+/* Responsivo */
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 24px;
+  }
+
+  .contact-box {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    position: static;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .top-contact {
+    text-align: left;
+  }
+}
