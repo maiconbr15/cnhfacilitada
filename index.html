@@ -1,499 +1,120 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CNH Facilitada DF - Auto Escola</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    body {
-      background-color: #f3f3f3;
-      color: #222;
-    }
-
-    header {
-      background: linear-gradient(135deg, #1e88e5, #1565c0);
-      color: #fff;
-      padding: 20px 16px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .top-nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      font-size: 1.4rem;
-      font-weight: bold;
-    }
-
-    .logo span {
-      font-weight: 300;
-    }
-
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 16px;
-      font-size: 0.95rem;
-    }
-
-    .nav-links a:hover {
-      text-decoration: underline;
-    }
-
-    .hero {
-      padding: 40px 16px 30px;
-      background: linear-gradient(135deg, #1e88e5, #1565c0);
-      color: #fff;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 32px;
-      align-items: center;
-    }
-
-    .hero h1 {
-      font-size: 2rem;
-      margin-bottom: 12px;
-    }
-
-    .hero p {
-      font-size: 1rem;
-      margin-bottom: 16px;
-      line-height: 1.5;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.15);
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      margin-bottom: 12px;
-    }
-
-    .hero-card {
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      padding: 16px 18px;
-      font-size: 0.9rem;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-    }
-
-    .hero-card h2 {
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-    }
-
-    .hero-card ul {
-      margin-left: 16px;
-      margin-top: 6px;
-      line-height: 1.4;
-    }
-
-    .btn-main,
-    .btn-secondary {
-      display: inline-block;
-      padding: 10px 18px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: bold;
-      cursor: pointer;
-      margin-right: 8px;
-      margin-top: 8px;
-    }
-
-    .btn-main {
-      background: #ffca28;
-      color: #000;
-    }
-
-    .btn-main:hover {
-      background: #ffc107;
-    }
-
-    .btn-secondary {
-      border: 1px solid #fff;
-      color: #fff;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.15);
-    }
-
-    section {
-      padding: 30px 16px;
-    }
-
-    h2.section-title {
-      font-size: 1.6rem;
-      margin-bottom: 5px;
-      text-align: center;
-    }
-
-    p.section-subtitle {
-      text-align: center;
-      font-size: 0.95rem;
-      color: #555;
-      margin-bottom: 22px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 18px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-      border: 1px solid #eee;
-    }
-
-    .card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      font-size: 0.9rem;
-      margin-bottom: 8px;
-      color: #444;
-    }
-
-    .card ul {
-      margin-left: 18px;
-      font-size: 0.9rem;
-      color: #444;
-    }
-
-    .price {
-      font-size: 1rem;
-      font-weight: bold;
-      margin-top: 8px;
-      color: #1565c0;
-    }
-
-    .steps {
-      counter-reset: steps;
-    }
-
-    .step {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 14px;
-      align-items: flex-start;
-    }
-
-    .step-number {
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      background: #1e88e5;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      flex-shrink: 0;
-    }
-
-    .step-text {
-      font-size: 0.92rem;
-      color: #333;
-    }
-
-    .highlight-box {
-      background: #fff3cd;
-      border: 1px solid #ffeeba;
-      border-radius: 10px;
-      padding: 14px;
-      font-size: 0.9rem;
-      color: #856404;
-      margin-top: 10px;
-    }
-
-    .contact-wrapper {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 20px;
-      align-items: flex-start;
-    }
-
-    .contact-info p {
-      font-size: 0.95rem;
-      margin-bottom: 6px;
-    }
-
-    .contact-info strong {
-      color: #1565c0;
-    }
-
-    .contact-card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 18px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-      border: 1px solid #eee;
-      font-size: 0.9rem;
-    }
-
-    .whatsapp-btn {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 18px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: bold;
-      background: #25d366;
-      color: #fff;
-      font-size: 0.95rem;
-    }
-
-    .whatsapp-btn:hover {
-      filter: brightness(0.95);
-    }
-
-    footer {
-      background: #111;
-      color: #ccc;
-      text-align: center;
-      padding: 14px 10px;
-      font-size: 0.8rem;
-      margin-top: 20px;
-    }
-
-    @media (max-width: 800px) {
-      .hero-grid,
-      .contact-wrapper {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>CNH Facilitada - Auto Escola & Consultoria</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CNH facilitada, primeira habilitação, renovação e troca de categoria com atendimento humanizado e suporte via WhatsApp.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- TOPO -->
-  <header>
-    <div class="container top-nav">
-      <div class="logo">CNH Facilitada <span>DF</span></div>
-      <nav class="nav-links">
-        <a href="#servicos">Serviços</a>
-        <a href="#planos">Planos</a>
-        <a href="#como-funciona">Como funciona</a>
-        <a href="#contato">Contato</a>
-      </nav>
-    </div>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="hero-badge">Atendimento rápido • Sem enrolação</div>
-        <h1>Tire sua CNH com praticidade e suporte do início ao fim.</h1>
-        <p>
-          Auxiliamos você em todo o processo para obter, renovar ou trocar de categoria
-          da CNH com praticidade, orientação e suporte via WhatsApp.
-        </p>
-        <a class="btn-main" href="https://wa.me/5561999999999" target="_blank">
-          Falar no WhatsApp agora
+<header>
+  <div class="top-bar">
+    <div class="logo">
+      CNH Facilitada<br>
+      <span>Auto Escola &amp; Consultoria</span>
+    </div>
+    <div class="top-contact">
+      <span>Atendimento rápido no WhatsApp</span>
+      <span><a href="https://wa.me/5561998721896" target="_blank">(61) 99872-1896</a></span>
+    </div>
+  </div>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="active">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="passo-a-passo.html">Passo a passo</a>
+      <a href="duvidas.html">Dúvidas</a>
+      <a href="contato.html">Contato</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero hero-bg">
+    <div>
+      <h1>Sua <span>CNH Facilitada</span> sem dor de cabeça</h1>
+      <p>
+        Ajudamos você a tirar a primeira habilitação, renovar ou trocar de categoria
+        com explicação simples, passo a passo e suporte direto pelo WhatsApp.
+      </p>
+
+      <div class="hero-badges">
+        <div class="badge">CNH Categoria AB</div>
+        <div class="badge">Processo facilitado</div>
+        <div class="badge">Atendimento humanizado</div>
+      </div>
+
+      <div class="hero-buttons">
+        <a class="btn-primary" target="_blank"
+           href="https://wa.me/5561998721896?text=Ol%C3%A1%2C%20quero%20saber%20sobre%20a%20CNH%20facilitada.">
+          Falar no WhatsApp
         </a>
-        <a class="btn-secondary" href="#planos">
-          Ver planos e valores
-        </a>
+        <a class="btn-outline" href="servicos.html">Ver valores e planos</a>
       </div>
-      <div class="hero-card">
-        <h2>Por que escolher a CNH Facilitada?</h2>
-        <ul>
-          <li>Atendimento online e presencial (ajuste conforme sua realidade).</li>
-          <li>Orientação passo a passo do processo.</li>
-          <li>Suporte via WhatsApp até a CNH física.</li>
-          <li>Transparência em valores e etapas.</li>
-        </ul>
-      </div>
+
+      <p class="hero-small">
+        Tire suas dúvidas sem compromisso. Explicamos documentos, prazos, taxas
+        e tudo que você precisa saber para se organizar.
+      </p>
+    </div>
+
+    <div class="hero-box">
+      <h2>Oferta especial CNH AB</h2>
+      <p class="section-subtitle" style="margin-bottom: 6px;">
+        Primeira habilitação categoria A+B com pagamento por etapas.
+      </p>
+      <p>
+        A partir de <strong style="color:#1f4cff;font-size:1.2rem;">R$ 1.100,00</strong>
+      </p>
+      <ul style="list-style:none;margin-top:10px;font-size:0.9rem;">
+        <li>✔ Entrada de <strong>R$ 300,00</strong></li>
+        <li>✔ <strong>R$ 400,00</strong> na liberação da CNH digital</li>
+        <li>✔ <strong>R$ 400,00</strong> na retirada da CNH física</li>
+      </ul>
+      <p style="font-size:0.8rem;color:#555;margin-top:8px;">
+        Valores podem variar de acordo com taxas do DETRAN e região.
+        Confirme o orçamento atualizado pelo WhatsApp.
+      </p>
     </div>
   </section>
 
-  <!-- SERVIÇOS -->
-  <section id="servicos">
-    <div class="container">
-      <h2 class="section-title">Serviços</h2>
-      <p class="section-subtitle">Tudo que você precisa para ficar em dia com sua habilitação.</p>
+  <section class="container">
+    <h2 class="section-title">Por que fazer sua CNH com a gente?</h2>
+    <p class="section-subtitle">
+      Atendimento direto, sem enrolação. Você sabe em que etapa está e o que falta para pegar sua CNH.
+    </p>
 
-      <div class="cards">
-        <div class="card">
-          <h3>Primeira Habilitação</h3>
-          <p>Auxílio completo para você tirar a sua primeira CNH.</p>
-          <ul>
-            <li>CNH Categoria A (moto)</li>
-            <li>CNH Categoria B (carro)</li>
-            <li>CNH Categoria AB (carro + moto)</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Renovação de CNH</h3>
-          <p>Suporte em todo o processo de renovação da sua CNH.</p>
-          <ul>
-            <li>Orientação sobre exames e prazos</li>
-            <li>Acompanhamento até a liberação</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Troca de Categoria</h3>
-          <p>Quer subir de categoria? Ajudamos você em cada etapa.</p>
-          <ul>
-            <li>B para C / D / E</li>
-            <li>Aumento de categoria profissional</li>
-          </ul>
-        </div>
+    <div class="cards">
+      <div class="card">
+        <h3>Explicação clara</h3>
+        <p>Falamos a sua língua, sem termos complicados. Você sabe exatamente o que vai acontecer em cada fase.</p>
+      </div>
+      <div class="card">
+        <h3>Pagamento facilitado</h3>
+        <p>Entrada e complementos divididos por etapa (digital e física), ajudando no seu planejamento financeiro.</p>
+      </div>
+      <div class="card">
+        <h3>Suporte no WhatsApp</h3>
+        <p>Tem dúvida? É só chamar. Acompanhamos o processo e damos retorno sempre que precisar.</p>
+      </div>
+      <div class="card">
+        <h3>Foco em resultado</h3>
+        <p>Nosso objetivo é ver você habilitado, com sua CNH em mãos e tudo regularizado.</p>
       </div>
     </div>
   </section>
+</main>
 
-  <!-- PLANOS / VALORES -->
-  <section id="planos" style="background:#e9f2ff;">
-    <div class="container">
-      <h2 class="section-title">Planos e Valores</h2>
-      <p class="section-subtitle">Exemplo de como você pode organizar seus valores no site (troque pelos seus reais).</p>
+<footer>
+  © <span id="ano"></span> CNH Facilitada - Auto Escola &amp; Consultoria. Todos os direitos reservados.
+</footer>
 
-      <div class="cards">
-        <div class="card">
-          <h3>Primeira Habilitação AB</h3>
-          <p>Processo completo com suporte até a CNH física.</p>
-          <p class="price">R$ 1.100,00*</p>
-          <ul>
-            <li>Entrada: R$ 300,00</li>
-            <li>Liberação digital: R$ 400,00</li>
-            <li>CNH física: R$ 400,00</li>
-          </ul>
-          <p style="font-size:0.8rem; margin-top:6px;">
-            *Valores ilustrativos. Ajuste de acordo com sua tabela atual.
-          </p>
-        </div>
+<script>
+  document.getElementById("ano").textContent = new Date().getFullYear();
+</script>
 
-        <div class="card">
-          <h3>Troca de Categoria</h3>
-          <p>Para quem já possui CNH e quer subir de categoria.</p>
-          <ul>
-            <li>Categoria A: a partir de R$ 200,00</li>
-            <li>Categoria B: a partir de R$ 400,00</li>
-            <li>Demais categorias: entre R$ 800 e R$ 1.000</li>
-          </ul>
-          <p style="font-size:0.8rem; margin-top:6px;">
-            *Insira aqui seus valores reais e condições de pagamento.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Consultoria + Suporte</h3>
-          <p>Tem dúvidas sobre processo, multas, pontos, prazos?</p>
-          <p class="price">Consulte via WhatsApp</p>
-          <p>Atendimento personalizado para seu caso.</p>
-          <a class="whatsapp-btn" href="https://wa.me/5561999999999" target="_blank">
-            Consultar agora
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMO FUNCIONA -->
-  <section id="como-funciona">
-    <div class="container">
-      <h2 class="section-title">Como funciona</h2>
-      <p class="section-subtitle">Um passo a passo simples para você entender tudo.</p>
-
-      <div class="cards">
-        <div class="card">
-          <h3>Passo a passo geral</h3>
-          <div class="steps">
-            <div class="step">
-              <div class="step-number">1</div>
-              <div class="step-text">Você chama no WhatsApp e explica o que precisa (primeira CNH, renovação, troca de categoria, etc.).</div>
-            </div>
-            <div class="step">
-              <div class="step-number">2</div>
-              <div class="step-text">Nós orientamos sobre a documentação necessária e valores.</div>
-            </div>
-            <div class="step">
-              <div class="step-number">3</div>
-              <div class="step-text">Você realiza o pagamento combinado e damos andamento ao processo.</div>
-            </div>
-            <div class="step">
-              <div class="step-number">4</div>
-              <div class="step-text">Acompanhamos você até a liberação da CNH digital e depois a física.</div>
-            </div>
-          </div>
-          <div class="highlight-box">
-            <strong>Importante:</strong> deixe claro aqui como funciona no seu caso real
-            (prazos, documentos, regras do Detran do seu estado, etc.).
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTATO -->
-  <section id="contato" style="background:#f8f8f8;">
-    <div class="container">
-      <h2 class="section-title">Contato</h2>
-      <p class="section-subtitle">Fale direto com a gente e tire todas as suas dúvidas.</p>
-
-      <div class="contact-wrapper">
-        <div class="contact-info">
-          <p><strong>WhatsApp:</strong> (61) 9 9999-9999</p>
-          <p><strong>E-mail:</strong> atendimento@cnhfacilitadadf.com</p>
-          <p><strong>Atendimento:</strong> Segunda a sábado (ajuste os horários reais).</p>
-          <p><strong>Região:</strong> DF e entorno (ajuste conforme sua área).</p>
-
-          <a class="whatsapp-btn" href="https://wa.me/5561999999999" target="_blank">
-            Chamar no WhatsApp
-          </a>
-        </div>
-
-        <div class="contact-card">
-          <p><strong>Mensagem rápida para o cliente:</strong></p>
-          <p style="margin-top:6px;">
-            “Olá! 👋 Somos a CNH Facilitada DF.  
-            Envie uma mensagem dizendo se é primeira habilitação, renovação ou troca de categoria
-            e vamos te responder com todas as informações de valores, prazos e documentos necessários.”
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    © <span id="ano"></span> CNH Facilitada DF - Todos os direitos reservados.
-  </footer>
-
-  <script>
-    document.getElementById('ano').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
