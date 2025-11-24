@@ -1,3 +1,7 @@
+/* ============================
+     RESET / GERAL
+============================ */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,7 +20,9 @@ a {
   color: inherit;
 }
 
-/* HEADER / NAV */
+/* ============================
+     HEADER / NAV
+============================ */
 
 header {
   background: rgba(10, 24, 61, 0.96);
@@ -37,13 +43,26 @@ header {
   align-items: center;
 }
 
+/* LOGO NOVA */
+
 .logo {
-  font-weight: 700;
-  font-size: 1.05rem;
-  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.logo span {
+.logo img {
+  height: 38px; /* Aumente ou diminua como quiser */
+  object-fit: contain;
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.1;
+}
+
+.logo-text span {
   font-size: 0.78rem;
   font-weight: 400;
   opacity: 0.85;
@@ -86,7 +105,9 @@ nav {
   color: #ffffff;
 }
 
-/* CONTAINERS E SEÇÕES */
+/* ============================
+         TEXTOS / LAYOUT
+============================ */
 
 main {
   min-height: 60vh;
@@ -98,6 +119,10 @@ main {
   padding: 32px 20px;
 }
 
+/* ============================
+            HERO
+============================ */
+
 .hero {
   max-width: 1150px;
   margin: 16px auto 10px;
@@ -106,10 +131,6 @@ main {
   grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
   gap: 30px;
   align-items: center;
-}
-
-.hero-bg {
-  position: relative;
 }
 
 .hero-bg::before {
@@ -156,7 +177,6 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 10px;
 }
 
 .btn-primary {
@@ -165,14 +185,13 @@ main {
   padding: 10px 20px;
   border-radius: 999px;
   font-weight: 600;
-  border: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-size: 0.94rem;
   box-shadow: 0 6px 18px rgba(31, 76, 255, 0.35);
-  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+  transition: 0.15s;
 }
 
 .btn-primary:hover {
@@ -188,10 +207,6 @@ main {
   border-radius: 999px;
   border: 1px solid #c2cffd;
   font-weight: 500;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
   font-size: 0.9rem;
 }
 
@@ -200,12 +215,14 @@ main {
   color: #60667a;
 }
 
-/* CAIXA DA DIREITA (SIMULA APP/WHATS) */
+/* ============================
+        HERO BOX (WHATS)
+============================ */
 
 .hero-box {
   background-color: #ffffff;
   border-radius: 22px;
-  padding: 18px 18px 16px;
+  padding: 18px;
   box-shadow: 0 18px 38px rgba(7, 19, 61, 0.25);
   border: 1px solid #dde4ff;
 }
@@ -213,25 +230,22 @@ main {
 .hero-box-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 6px;
   font-size: 0.78rem;
-  color: #707793;
+  margin-bottom: 6px;
 }
 
 .hero-box-dot {
   width: 8px;
   height: 8px;
-  border-radius: 50%;
   background: #22c55e;
-  margin-right: 4px;
+  border-radius: 50%;
 }
 
 .hero-box-tag {
-  font-size: 0.72rem;
+  background: #ecfdf3;
   padding: 2px 8px;
+  font-size: 0.72rem;
   border-radius: 999px;
-  background-color: #ecfdf3;
   color: #15803d;
 }
 
@@ -260,33 +274,9 @@ main {
   border-bottom-left-radius: 2px;
 }
 
-.hero-box h2 {
-  font-size: 1.05rem;
-  margin-bottom: 6px;
-  color: #0f172a;
-}
-
-.hero-box p {
-  font-size: 0.86rem;
-}
-
-.hero-box ul {
-  list-style: none;
-  margin-top: 8px;
-  font-size: 0.82rem;
-}
-
-.hero-box ul li {
-  margin-bottom: 4px;
-}
-
-.hero-box ul li::before {
-  content: "✔ ";
-  color: #16a34a;
-  font-weight: 700;
-}
-
-/* SEÇÕES PADRÃO */
+/* ============================
+           CARDS
+============================ */
 
 .section-title {
   font-size: 1.6rem;
@@ -309,7 +299,7 @@ main {
 .card {
   background-color: #ffffff;
   border-radius: 16px;
-  padding: 16px 16px 14px;
+  padding: 16px;
   box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
   border: 1px solid #e0e6f5;
 }
@@ -325,16 +315,13 @@ main {
   color: #4b5563;
 }
 
-.card strong {
-  color: #1f4cff;
-}
-
-/* LISTA DE PASSOS */
+/* ============================
+           PASSO A PASSO
+============================ */
 
 .steps {
   list-style: none;
   counter-reset: step-counter;
-  padding-left: 0;
 }
 
 .steps li {
@@ -345,7 +332,6 @@ main {
   box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
   border: 1px solid #e3e7f1;
   font-size: 0.88rem;
-  color: #374151;
 }
 
 .steps li::before {
@@ -355,7 +341,9 @@ main {
   color: #1f4cff;
 }
 
-/* FAQ */
+/* ============================
+            FAQ
+============================ */
 
 .faq-item {
   margin-bottom: 10px;
@@ -378,7 +366,9 @@ main {
   color: #4b5563;
 }
 
-/* CONTATO BOX */
+/* ============================
+         CONTATO
+============================ */
 
 .contact-box {
   background: linear-gradient(135deg, #1f4cff, #3b82f6);
@@ -386,24 +376,10 @@ main {
   border-radius: 20px;
   padding: 20px;
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+  grid-template-columns: 2fr 1.2fr;
   gap: 18px;
   align-items: center;
   box-shadow: 0 16px 34px rgba(15, 23, 42, 0.3);
-}
-
-.contact-info p {
-  font-size: 0.9rem;
-  margin-bottom: 6px;
-}
-
-.contact-info a {
-  color: #bbf7d0;
-  font-weight: 700;
-}
-
-.contact-whats {
-  text-align: center;
 }
 
 .contact-whats .btn-primary {
@@ -411,13 +387,7 @@ main {
   box-shadow: 0 8px 22px rgba(22, 163, 74, 0.5);
 }
 
-.contact-whats span {
-  font-size: 0.82rem;
-  display: block;
-  opacity: 0.92;
-}
-
-/* FORMULÁRIO */
+/* FORM */
 
 form {
   background-color: #ffffff;
@@ -456,12 +426,14 @@ form textarea:focus {
   box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.3);
 }
 
-form textarea {
+textarea {
   min-height: 90px;
   resize: vertical;
 }
 
-/* RODAPÉ */
+/* ============================
+         FOOTER
+============================ */
 
 footer {
   padding: 16px 20px 18px;
@@ -471,12 +443,13 @@ footer {
   margin-top: 20px;
 }
 
-/* RESPONSIVO */
+/* ============================
+       RESPONSIVO
+============================ */
 
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
-    padding-top: 24px;
   }
 
   .contact-box {
