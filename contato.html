@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Contato - CNH Facilitada Online</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Entre em contato com a CNH Facilitada Online e tire suas dúvidas pelo WhatsApp ou e-mail.">
+  <meta name="description" content="Entre em contato com a CNH Facilitada Online e tire suas dúvidas pelo WhatsApp.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="img/favicon.png" type="image/png">
 </head>
@@ -40,8 +40,8 @@
   <section class="container">
     <h1 class="section-title">Fale com a CNH Facilitada Online</h1>
     <p class="section-subtitle">
-      O jeito mais rápido de falar com a gente é pelo WhatsApp.  
-      Se preferir, você também pode enviar um e-mail usando o formulário abaixo.
+      Preencha os dados abaixo que nós montamos uma mensagem automática e
+      abrimos o WhatsApp pra você enviar direto para o atendimento.
     </p>
 
     <div class="contact-box" style="margin-bottom:24px;">
@@ -49,8 +49,7 @@
         <p><strong>WhatsApp:</strong> <a href="https://wa.me/5561998721896" target="_blank">(61) 99872-1896</a></p>
         <p><strong>Atendimento:</strong> 100% online, em horário a combinar.</p>
         <p style="font-size:0.86rem;margin-top:4px;">
-          Quando mandar mensagem, diga que veio pelo site da CNH Facilitada Online,
-          assim já sabemos do que você precisa.
+          Você pode usar o formulário abaixo ou clicar direto no botão de WhatsApp.
         </p>
       </div>
       <div class="contact-whats">
@@ -62,15 +61,15 @@
       </div>
     </div>
 
-    <!-- Formulário simples: abre o programa de e-mail do cliente -->
-    <form action="mailto:seuemail@exemplo.com" method="post" enctype="text/plain">
+    <!-- Formulário que gera mensagem pro WhatsApp -->
+    <form id="contato-form">
       <div class="field">
         <label for="nome">Nome completo</label>
-        <input type="text" id="nome" name="Nome" required>
+        <input type="text" id="nome" name="Nome" placeholder="Seu nome" required>
       </div>
       <div class="field">
         <label for="telefone">Telefone / WhatsApp</label>
-        <input type="text" id="telefone" name="Telefone">
+        <input type="text" id="telefone" name="Telefone" placeholder="(DDD) 9XXXX-XXXX">
       </div>
       <div class="field">
         <label for="assunto">Assunto</label>
@@ -80,11 +79,12 @@
         <label for="mensagem">Mensagem</label>
         <textarea id="mensagem" name="Mensagem" placeholder="Explique sua situação para podermos te orientar melhor."></textarea>
       </div>
-      <button type="submit" class="btn-primary">Enviar mensagem por e-mail</button>
+      <button type="submit" class="btn-primary">Enviar pelo WhatsApp</button>
     </form>
 
     <p style="font-size:0.8rem;color:#6b7280;margin-top:10px;">
-      Dica: para resposta mais rápida, use o botão de WhatsApp acima.
+      Dica: ao clicar em “Enviar pelo WhatsApp”, vamos abrir o WhatsApp com a mensagem já pronta,
+      é só conferir e apertar enviar.
     </p>
   </section>
 </main>
@@ -100,7 +100,35 @@
 </footer>
 
 <script>
+  // ano do rodapé
   document.getElementById("ano").textContent = new Date().getFullYear();
+
+  // formulário → abre WhatsApp com mensagem montada
+  document.getElementById("contato-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nome = document.getElementById("nome").value.trim();
+    const tel = document.getElementById("telefone").value.trim();
+    const assunto = document.getElementById("assunto").value.trim();
+    const msg = document.getElementById("mensagem").value.trim();
+
+    let texto = "Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20ajuda%20na%20minha%20CNH.%0A%0A";
+
+    // Monta mensagem bonitinha
+    const partes = [];
+    if (nome) partes.push("Nome: " + nome);
+    if (tel) partes.push("Telefone: " + tel);
+    if (assunto) partes.push("Assunto: " + assunto);
+    if (msg) partes.push("Mensagem: " + msg);
+
+    if (partes.length > 0) {
+      const textoLivre = partes.join("\n");
+      texto += encodeURIComponent(textoLivre);
+    }
+
+    const url = "https://wa.me/5561998721896?text=" + texto;
+    window.open(url, "_blank");
+  });
 </script>
 
 </body>
