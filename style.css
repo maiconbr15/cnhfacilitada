@@ -9,6 +9,10 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: radial-gradient(circle at top, #e3eeff 0, #f4f6fb 40%, #eef1ff 100%);
   color: #222;
@@ -52,7 +56,7 @@ header {
 }
 
 .logo img {
-  height: 38px; /* Aumente ou diminua como quiser */
+  height: 38px;
   object-fit: contain;
 }
 
@@ -106,7 +110,7 @@ nav {
 }
 
 /* ============================
-         TEXTOS / LAYOUT
+        HERO / LAYOUT
 ============================ */
 
 main {
@@ -119,10 +123,6 @@ main {
   padding: 32px 20px;
 }
 
-/* ============================
-            HERO
-============================ */
-
 .hero {
   max-width: 1150px;
   margin: 16px auto 10px;
@@ -131,6 +131,7 @@ main {
   grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
   gap: 30px;
   align-items: center;
+  position: relative;
 }
 
 .hero-bg::before {
@@ -179,6 +180,8 @@ main {
   gap: 10px;
 }
 
+/* BOTÕES */
+
 .btn-primary {
   background: linear-gradient(135deg, #1f4cff, #4f8dff);
   color: #fff;
@@ -207,17 +210,17 @@ main {
   border-radius: 999px;
   border: 1px solid #c2cffd;
   font-weight: 500;
-  font-size: 0.9rem;
+  transition: 0.15s;
 }
 
-.hero-small {
-  font-size: 0.82rem;
-  color: #60667a;
+.btn-outline:hover {
+  background-color: #1f4cff;
+  color: #fff;
+  border-color: #1f4cff;
+  transform: translateY(-1px);
 }
 
-/* ============================
-        HERO BOX (WHATS)
-============================ */
+/* CAIXA WHATSAPP */
 
 .hero-box {
   background-color: #ffffff;
@@ -275,7 +278,7 @@ main {
 }
 
 /* ============================
-           CARDS
+        SEÇÕES / CARDS
 ============================ */
 
 .section-title {
@@ -302,21 +305,17 @@ main {
   padding: 16px;
   box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
   border: 1px solid #e0e6f5;
+  transition: 0.15s;
 }
 
-.card h3 {
-  font-size: 1rem;
-  margin-bottom: 6px;
-  color: #111827;
-}
-
-.card p {
-  font-size: 0.88rem;
-  color: #4b5563;
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
+  border-color: #c7d2fe;
 }
 
 /* ============================
-           PASSO A PASSO
+        LISTAS / PASSO
 ============================ */
 
 .steps {
@@ -342,7 +341,7 @@ main {
 }
 
 /* ============================
-            FAQ
+          FAQ
 ============================ */
 
 .faq-item {
@@ -351,7 +350,6 @@ main {
   border-radius: 10px;
   padding: 12px 14px;
   border: 1px solid #e3e7f1;
-  box-shadow: 0 8px 18px rgba(17, 24, 39, 0.04);
 }
 
 .faq-item strong {
@@ -387,7 +385,7 @@ main {
   box-shadow: 0 8px 22px rgba(22, 163, 74, 0.5);
 }
 
-/* FORM */
+/* FORMULÁRIO */
 
 form {
   background-color: #ffffff;
@@ -402,15 +400,15 @@ form .field {
   margin-bottom: 12px;
 }
 
-form label {
+label {
   font-size: 0.86rem;
   display: block;
   margin-bottom: 4px;
   color: #111827;
 }
 
-form input,
-form textarea {
+input,
+textarea {
   width: 100%;
   padding: 8px 10px;
   font-size: 0.88rem;
@@ -419,16 +417,54 @@ form textarea {
   background: #f9fafb;
 }
 
-form input:focus,
-form textarea:focus {
+textarea {
+  min-height: 90px;
+}
+
+input:focus,
+textarea:focus {
   outline: none;
   border-color: #4f46e5;
   box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.3);
 }
 
-textarea {
-  min-height: 90px;
-  resize: vertical;
+/* ============================
+       BOTÃO WHATS FLUTUANTE
+============================ */
+
+.whats-float {
+  position: fixed;
+  right: 16px;
+  bottom: 18px;
+  z-index: 30;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #fff;
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  box-shadow: 0 10px 26px rgba(22, 163, 74, 0.6);
+  cursor: pointer;
+  transition: 0.12s ease;
+}
+
+.whats-float:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 32px rgba(22, 163, 74, 0.75);
+  opacity: 0.96;
+}
+
+@media (max-width: 600px) {
+  .whats-float {
+    right: 12px;
+    bottom: 14px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+  }
 }
 
 /* ============================
@@ -456,14 +492,9 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  header {
-    position: static;
-  }
-
   .top-bar {
     flex-direction: column;
     align-items: flex-start;
-    gap: 4px;
   }
 
   .top-contact {
