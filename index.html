@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="img/favicon.png" type="image/png">
 
-  <!-- Estilos extras só para o chat -->
+  <!-- Estilos extras só para o chat e depoimentos -->
   <style>
+    /* CHAT */
     .chat-bubbles {
       position: relative;
       display: flex;
@@ -28,8 +29,8 @@
 
     .bubble-avatar {
       font-size: 1.3rem;
-      line-height: 1;
       flex-shrink: 0;
+      line-height: 1;
     }
 
     .bubble-text {
@@ -39,6 +40,51 @@
     .bubble-typing {
       font-size: 0.8rem;
       opacity: 0.8;
+      font-style: italic;
+    }
+
+    /* DEPOIMENTOS */
+    .depoimento-box {
+      margin-top: 25px;
+      background: #fff;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      text-align: center;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+
+    .depo-avatar {
+      font-size: 2.4rem;
+      margin-bottom: 8px;
+    }
+
+    .depo-nome {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .depo-cidade {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    .depo-estrelas {
+      font-size: 1.2rem;
+      color: #f0c400;
+      margin-bottom: 10px;
+    }
+
+    .depo-texto {
+      font-size: 1rem;
+      line-height: 1.4rem;
+      color: #333;
       font-style: italic;
     }
   </style>
@@ -80,8 +126,8 @@
     <div>
       <h1>Todos os seus <span>serviços facilitados</span> em um só lugar</h1>
       <p>
-        CNH, transferência, licenciamento, multas, IPVA e consultorias.  
-        <strong>Atendemos todo o Brasil 🇧🇷</strong> — tudo pelo WhatsApp, rápido e sem complicação.
+        CNH, transferência, licenciamento, multas, IPVA e consultorias.<br>
+        <strong>Atendemos todo o Brasil 🇧🇷</strong> — tudo pelo WhatsApp.
       </p>
 
       <div class="hero-badges">
@@ -92,20 +138,16 @@
 
       <div class="hero-buttons">
         <a class="btn-primary" target="_blank"
-           href="https://wa.me/5561998721896?text=Ol%C3%A1%2C%20quero%20ajuda%20com%20um%20servi%C3%A7o%20facilitado.">
+           href="https://wa.me/5561998721896?text=Olá, quero ajuda com um serviço facilitado.">
           💬 Falar no WhatsApp Agora
         </a>
         <a class="btn-outline" href="servicos.html">
           Ver todos os serviços
         </a>
       </div>
-
-      <p class="hero-small">
-        Atendimento humanizado — explicação clara, rápida e organizada.
-      </p>
     </div>
 
-    <!-- CHAT EM TEMPO REAL FAKE -->
+    <!-- CHAT ANIMADO -->
     <div class="hero-box">
       <div class="hero-box-header">
         <span>Atendimento em tempo real</span>
@@ -125,66 +167,54 @@
     </div>
   </section>
 
-  <!-- SERVIÇOS COM ÍCONES -->
+  <!-- SERVIÇOS -->
   <section class="container">
     <h2 class="section-title">Serviços que oferecemos</h2>
-    <p class="section-subtitle">
-      Tudo organizado e explicado: CNH, documentos, veículos e soluções rápidas.
-    </p>
+    <p class="section-subtitle">Tudo organizado e explicado para você.</p>
 
     <div class="cards">
 
       <div class="card">
-        <h3>
-          <svg xmlns="http://www.w3.org/2000/svg" style="width:22px;margin-right:6px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M3 5h18M3 10h18M7 15h.01M11 15h6M7 20h.01M11 20h6" />
-          </svg>
-          CNH Facilitada
-        </h3>
+        <h3>CNH Facilitada</h3>
         <p>Primeira habilitação, renovação e troca de categoria.</p>
       </div>
 
       <div class="card">
-        <h3>
-          <svg xmlns="http://www.w3.org/2000/svg" style="width:22px;margin-right:6px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M2 12l2 9h16l2-9M5 12V7a7 7 0 0114 0v5" />
-          </svg>
-          Despachante Veicular
-        </h3>
+        <h3>Despachante Veicular</h3>
         <p>Transferência, vistoria, CRLV, atualização de dados.</p>
       </div>
 
       <div class="card">
-        <h3>
-          <svg xmlns="http://www.w3.org/2000/svg" style="width:22px;margin-right:6px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 12h6m-3-3v6m8 4H4a1 1 0 01-1-1V7l9-4 9 4v11a1 1 0 01-1 1z" />
-          </svg>
-          Multas, Pontos e IPVA
-        </h3>
+        <h3>Multas, Pontos e IPVA</h3>
         <p>Consulta completa + instruções para regularizar.</p>
       </div>
 
       <div class="card">
-        <h3>
-          <svg xmlns="http://www.w3.org/2000/svg" style="width:22px;margin-right:6px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M12 8c-1.105 0-2 .672-2 1.5S10.895 11 12 11s2 .672 2-1.5S13.105 8 12 8zM5 15l7-7 7 7" />
-          </svg>
-          Serviços Sob Medida
-        </h3>
-        <p>Tem uma situação específica? Explica no WhatsApp.</p>
+        <h3>Serviços Sob Medida</h3>
+        <p>Explique sua situação para orientarmos corretamente.</p>
       </div>
 
     </div>
   </section>
 
+  <!-- DEPOIMENTOS -->
+  <section class="container">
+    <h2 class="section-title">Depoimentos de Clientes</h2>
+    <p class="section-subtitle">Brasília, Entorno e Goiás confiam no nosso atendimento.</p>
+
+    <div id="depoimento-box" class="depoimento-box">
+      <div class="depo-avatar">🙂</div>
+      <div class="depo-nome">Carregando...</div>
+      <div class="depo-cidade">...</div>
+      <div class="depo-estrelas">⭐⭐⭐⭐⭐</div>
+      <div class="depo-texto">...</div>
+    </div>
+  </section>
+
 </main>
 
-<!-- Botão WhatsApp -->
-<a href="https://wa.me/5561998721896?text=Ol%C3%A1%2C%20quero%20informações%20sobre%20um%20servi%C3%A7o%20facilitado."
+<!-- BOTÃO WHATSAPP -->
+<a href="https://wa.me/5561998721896?text=Olá, preciso de ajuda."
    class="whats-float" target="_blank">💬</a>
 
 <footer>
@@ -192,43 +222,23 @@
   © <span id="ano"></span> cnhgovt.shop - CNH, Veículos & Serviços Facilitados.
 </footer>
 
-<!-- SOM DE NOTIFICAÇÃO -->
+<!-- SOM -->
 <audio id="notify-sound" preload="auto">
-  <!-- Depois você coloca um arquivo em sounds/notify.mp3 e usa assim: src="sounds/notify.mp3" -->
   <source src="sounds/notify.mp3" type="audio/mpeg">
 </audio>
 
 <!-- SCRIPT FINAL -->
 <script>
-  // ano no rodapé
   document.getElementById("ano").textContent = new Date().getFullYear();
 
-  // lista de perguntas e respostas aleatórias (sem HTML pra digitação funcionar)
+  /* CHAT ANIMADO */
   const qaPairs = [
-    {
-      q: "Vocês mexem só com CNH?",
-      a: "Não! Fazemos CNH, documentos de veículos, multas, IPVA e vários serviços facilitados."
-    },
-    {
-      q: "Consigo resolver quase tudo pelo WhatsApp?",
-      a: "Sim! Grande parte é online. Onde a lei exige presença, a gente te orienta direitinho."
-    },
-    {
-      q: "Atendem só Brasília e Entorno?",
-      a: "Não, atendemos clientes em todo o Brasil com atendimento 100% online."
-    },
-    {
-      q: "Vocês são do DETRAN?",
-      a: "Não. Somos atendimento facilitado, ajudando você a seguir o caminho certo nos órgãos oficiais."
-    },
-    {
-      q: "Dá para consultar multas e pontos da CNH?",
-      a: "Dá sim. Fazemos consulta completa e explicamos cada detalhe da sua situação."
-    },
-    {
-      q: "Tô com documento atrasado, tem como organizar?",
-      a: "Tem. Você manda os dados e montamos o passo a passo para regularizar."
-    }
+    { q: "Vocês mexem só com CNH?", a: "Não! Fazemos CNH, documentos de veículos, multas, IPVA e serviços facilitados." },
+    { q: "Consigo resolver tudo pelo WhatsApp?", a: "Sim! Onde a lei exige presença, te orientamos passo a passo." },
+    { q: "Atendem só DF e Goiás?", a: "Não! Atendemos todo o Brasil com atendimento 100% online." },
+    { q: "Vocês são DETRAN?", a: "Não. Somos atendimento facilitado, ajudando você no caminho correto." },
+    { q: "Dá pra consultar multas e pontos?", a: "Sim! Fazemos consulta completa explicando tudo certinho." },
+    { q: "Documento atrasado resolve?", a: "Resolve sim! Montamos o passo a passo pra organizar tudo." }
   ];
 
   let qaIndex = 0;
@@ -236,13 +246,10 @@
 
   function playNotification() {
     const audio = document.getElementById("notify-sound");
-    if (!audio) return;
     try {
       audio.currentTime = 0;
       audio.play().catch(() => {});
-    } catch (e) {
-      // ignora erro de autoplay
-    }
+    } catch (e) {}
   }
 
   function typeText(element, text, callback) {
@@ -269,38 +276,66 @@
   }
 
   function atualizarChat() {
-    const perguntaBubble = document.getElementById("bubble-pergunta");
-    const respostaBubble = document.getElementById("bubble-resposta");
-    if (!perguntaBubble || !respostaBubble) return;
+    const pBubble = document.getElementById("bubble-pergunta");
+    const rBubble = document.getElementById("bubble-resposta");
 
-    const perguntaTextEl = perguntaBubble.querySelector(".bubble-text");
-    const respostaTextEl = respostaBubble.querySelector(".bubble-text");
+    const pText = pBubble.querySelector(".bubble-text");
+    const rText = rBubble.querySelector(".bubble-text");
 
     const pair = qaPairs[qaIndex];
 
-    // pergunta aparece direto
-    perguntaTextEl.textContent = "“" + pair.q + "”";
+    pText.textContent = "“" + pair.q + "”";
 
-    // anima bolhas
-    animateBubble(perguntaBubble);
-    animateBubble(respostaBubble);
+    animateBubble(pBubble);
+    animateBubble(rBubble);
 
-    // mostra "digitando..."
-    respostaTextEl.innerHTML = '<span class="bubble-typing">Atendente está digitando...</span>';
+    rText.innerHTML = '<span class="bubble-typing">Atendente digitando...</span>';
 
-    // após pequeno delay, começa a digitação + som
     setTimeout(() => {
       playNotification();
-      typeText(respostaTextEl, pair.a);
+      typeText(rText, pair.a);
     }, 800);
 
     qaIndex = (qaIndex + 1) % qaPairs.length;
   }
 
-  // primeira exibição
   atualizarChat();
-  // troca a cada 7 segundos
   setInterval(atualizarChat, 7000);
+
+  /* DEPOIMENTOS */
+  const depoimentos = [
+    { avatar: "🙂", nome: "Lucas Ferreira", cidade: "Taguatinga - DF", texto: "Resolveu minha renovação muito rápido. Atendimento top!" },
+    { avatar: "😊", nome: "Maria Santos", cidade: "Águas Lindas - GO", texto: "Transferência do carro sem dor de cabeça. Explicação perfeita!" },
+    { avatar: "😀", nome: "Rafael Almeida", cidade: "Ceilândia - DF", texto: "Eu tava perdido com pontos na CNH, me ajudaram demais." },
+    { avatar: "🙂", nome: "Juliana Rocha", cidade: "Gama - DF", texto: "Muito rápido. Atendimento direto e sem enrolação." },
+    { avatar: "😄", nome: "Pedro Carvalho", cidade: "Luziânia - GO", texto: "Meu documento atrasado há anos, resolveram tudo certinho." },
+    { avatar: "😁", nome: "Ana Paula", cidade: "Valparaíso - GO", texto: "Melhor atendimento. Explicação clara e paciente." }
+  ];
+
+  let dIndex = 0;
+
+  function mostrarDepoimento() {
+    const box = document.getElementById("depoimento-box");
+
+    box.style.opacity = "0";
+    box.style.transform = "translateY(8px)";
+
+    setTimeout(() => {
+      const d = depoimentos[dIndex];
+      box.querySelector(".depo-avatar").textContent = d.avatar;
+      box.querySelector(".depo-nome").textContent = d.nome;
+      box.querySelector(".depo-cidade").textContent = d.cidade;
+      box.querySelector(".depo-texto").textContent = "“" + d.texto + "”";
+
+      box.style.opacity = "1";
+      box.style.transform = "translateY(0)";
+
+      dIndex = (dIndex + 1) % depoimentos.length;
+    }, 300);
+  }
+
+  mostrarDepoimento();
+  setInterval(mostrarDepoimento, 5000);
 </script>
 
 </body>
