@@ -7,6 +7,41 @@
   <meta name="description" content="Serviços facilitados: CNH, transferência, licenciamento, multas, IPVA e documentação. Atendemos todo o Brasil. Suporte rápido pelo WhatsApp.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="img/favicon.png" type="image/png">
+
+  <!-- Estilos extras só para o chat -->
+  <style>
+    .chat-bubbles {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .bubble {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .bubble-avatar {
+      font-size: 1.3rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .bubble-text {
+      flex: 1;
+    }
+
+    .bubble-typing {
+      font-size: 0.8rem;
+      opacity: 0.8;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
 
@@ -78,8 +113,14 @@
       </div>
 
       <div class="chat-bubbles">
-        <div class="bubble bubble-user" id="bubble-pergunta"></div>
-        <div class="bubble bubble-atend" id="bubble-resposta"></div>
+        <div class="bubble bubble-user" id="bubble-pergunta">
+          <div class="bubble-avatar">🙂</div>
+          <div class="bubble-text"></div>
+        </div>
+        <div class="bubble bubble-atend" id="bubble-resposta">
+          <div class="bubble-avatar">👮</div>
+          <div class="bubble-text"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -151,57 +192,115 @@
   © <span id="ano"></span> cnhgovt.shop - CNH, Veículos & Serviços Facilitados.
 </footer>
 
+<!-- SOM DE NOTIFICAÇÃO -->
+<audio id="notify-sound" preload="auto">
+  <!-- Depois você coloca um arquivo em sounds/notify.mp3 e usa assim: src="sounds/notify.mp3" -->
+  <source src="sounds/notify.mp3" type="audio/mpeg">
+</audio>
+
 <!-- SCRIPT FINAL -->
 <script>
   // ano no rodapé
   document.getElementById("ano").textContent = new Date().getFullYear();
 
-  // lista de perguntas e respostas aleatórias
+  // lista de perguntas e respostas aleatórias (sem HTML pra digitação funcionar)
   const qaPairs = [
     {
       q: "Vocês mexem só com CNH?",
       a: "Não! Fazemos CNH, documentos de veículos, multas, IPVA e vários serviços facilitados."
     },
     {
-      q: "Consigo resolver tudo pelo WhatsApp?",
-      a: "Grande parte sim. O que for obrigatório presencial (prova, exame, vistoria) a gente te orienta direitinho."
+      q: "Consigo resolver quase tudo pelo WhatsApp?",
+      a: "Sim! Grande parte é online. Onde a lei exige presença, a gente te orienta direitinho."
     },
     {
       q: "Atendem só Brasília e Entorno?",
-      a: "Não! <strong>Atendemos todo o Brasil 🇧🇷</strong> com atendimento 100% online."
+      a: "Não, atendemos clientes em todo o Brasil com atendimento 100% online."
     },
     {
-      q: "Vocês são DETRAN?",
-      a: "Não, somos atendimento facilitado. Ajudamos você a seguir o caminho certo nos órgãos oficiais."
+      q: "Vocês são do DETRAN?",
+      a: "Não. Somos atendimento facilitado, ajudando você a seguir o caminho certo nos órgãos oficiais."
     },
     {
-      q: "Dá pra ver multas e pontos da minha CNH?",
-      a: "Sim, fazemos consulta completa e explicamos cada detalhe pra você entender tudo."
+      q: "Dá para consultar multas e pontos da CNH?",
+      a: "Dá sim. Fazemos consulta completa e explicamos cada detalhe da sua situação."
     },
     {
       q: "Tô com documento atrasado, tem como organizar?",
-      a: "Tem sim. Você manda os dados e a gente monta o passo a passo certinho pra regularizar."
+      a: "Tem. Você manda os dados e montamos o passo a passo para regularizar."
     }
   ];
 
   let qaIndex = 0;
+  let typingInterval = null;
+
+  function playNotification() {
+    const audio = document.getElementById("notify-sound");
+    if (!audio) return;
+    try {
+      audio.currentTime = 0;
+      audio.play().catch(() => {});
+    } catch (e) {
+      // ignora erro de autoplay
+    }
+  }
+
+  function typeText(element, text, callback) {
+    if (typingInterval) clearInterval(typingInterval);
+    element.textContent = "“";
+    let i = 0;
+    typingInterval = setInterval(() => {
+      element.textContent = "“" + text.slice(0, i) + "”";
+      i++;
+      if (i > text.length) {
+        clearInterval(typingInterval);
+        if (callback) callback();
+      }
+    }, 35);
+  }
+
+  function animateBubble(el) {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(4px)";
+    setTimeout(() => {
+      el.style.opacity = "1";
+      el.style.transform = "translateY(0)";
+    }, 30);
+  }
 
   function atualizarChat() {
-    const perguntaEl = document.getElementById("bubble-pergunta");
-    const respostaEl = document.getElementById("bubble-resposta");
+    const perguntaBubble = document.getElementById("bubble-pergunta");
+    const respostaBubble = document.getElementById("bubble-resposta");
+    if (!perguntaBubble || !respostaBubble) return;
+
+    const perguntaTextEl = perguntaBubble.querySelector(".bubble-text");
+    const respostaTextEl = respostaBubble.querySelector(".bubble-text");
 
     const pair = qaPairs[qaIndex];
 
-    perguntaEl.textContent = "“" + pair.q + "”";
-    respostaEl.innerHTML = "“" + pair.a + "”";
+    // pergunta aparece direto
+    perguntaTextEl.textContent = "“" + pair.q + "”";
+
+    // anima bolhas
+    animateBubble(perguntaBubble);
+    animateBubble(respostaBubble);
+
+    // mostra "digitando..."
+    respostaTextEl.innerHTML = '<span class="bubble-typing">Atendente está digitando...</span>';
+
+    // após pequeno delay, começa a digitação + som
+    setTimeout(() => {
+      playNotification();
+      typeText(respostaTextEl, pair.a);
+    }, 800);
 
     qaIndex = (qaIndex + 1) % qaPairs.length;
   }
 
   // primeira exibição
   atualizarChat();
-  // troca a cada 6 segundos
-  setInterval(atualizarChat, 6000);
+  // troca a cada 7 segundos
+  setInterval(atualizarChat, 7000);
 </script>
 
 </body>
