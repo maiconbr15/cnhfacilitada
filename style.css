@@ -17,7 +17,11 @@ body {
   background: radial-gradient(circle at top, #e3eeff 0, #f4f6fb 40%, #eef1ff 100%);
   color: #222;
   line-height: 1.6;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: siteFadeIn 0.6s ease-out forwards;
 }
+
 
 a {
   text-decoration: none;
@@ -615,3 +619,46 @@ footer {
   color: #333;
   font-style: italic;
 }
+
+/* ============================
+   ANIMAÇÃO ENTRADA DO SITE
+============================ */
+
+@keyframes siteFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efeito extra nas seções principais */
+.hero,
+.container {
+  animation: sectionRise 0.7s ease-out forwards;
+  transform: translateY(12px);
+  opacity: 0;
+}
+
+.hero {
+  animation-delay: 0.05s;
+}
+
+.container {
+  animation-delay: 0.12s;
+}
+
+@keyframes sectionRise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
