@@ -4,26 +4,29 @@
   <meta charset="UTF-8">
   <title>Contato - cnhgovt.shop - Serviços Facilitados</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Entre em contato com o cnhgovt.shop e tire suas dúvidas sobre CNH, veículos, multas e outros serviços facilitados pelo WhatsApp.">
+  <meta name="description" content="Entre em contato e tire suas dúvidas sobre CNH, documentos veiculares, multas, transferências e outros serviços facilitados. Atendemos todo o Brasil.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="img/favicon.png" type="image/png">
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="top-bar">
     <div class="logo">
-      <img src="img/logo.png" alt="Logo cnhgovt.shop - Serviços Facilitados">
+      <img src="img/logo.png" alt="Logo cnhgovt.shop">
       <div class="logo-text">
         cnhgovt.shop<br>
-        <span>CNH, Veículos &amp; Serviços Facilitados</span>
+        <span>Atendemos todo o Brasil 🇧🇷</span>
       </div>
     </div>
+
     <div class="top-contact">
-      <span>Atendimento 100% online</span><br>
+      <span>Atendimento online</span><br>
       <a href="https://wa.me/5561998721896" target="_blank">(61) 99872-1896</a>
     </div>
   </div>
+
   <nav>
     <div class="nav-inner">
       <a href="index.html">Início</a>
@@ -37,98 +40,115 @@
 </header>
 
 <main>
+
   <section class="container">
-    <h1 class="section-title">Fale com o cnhgovt.shop</h1>
+    <h1 class="section-title">Fale com o atendimento</h1>
     <p class="section-subtitle">
-      O jeito mais rápido de resolver é explicar seu caso no WhatsApp.  
-      Se preferir, você pode preencher os campos abaixo que montamos uma
-      mensagem automática pra você enviar.
+      A forma mais rápida de resolver seu caso é pelo WhatsApp.  
+      Preencha os campos abaixo para montarmos a mensagem automática —  
+      ou clique direto no botão para chamar agora.
     </p>
 
-    <div class="contact-box" style="margin-bottom:24px;">
+    <!-- BLOCO WHATSAPP DIRETO -->
+    <div class="contact-box">
       <div class="contact-info">
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/5561998721896" target="_blank">(61) 99872-1896</a></p>
-        <p><strong>Atendimento:</strong> 100% online, em horário a combinar.</p>
-        <p style="font-size:0.86rem;margin-top:4px;">
-          Você pode clicar direto no botão de WhatsApp ou usar o formulário
-          para já escrever com mais detalhes.
+        <h3 style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
+          <svg xmlns="http://www.w3.org/2000/svg" style="width:20px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8 10h.01M12 10h.01M16 10h.01M21 12a9 9 0 11-6-8.485"/>
+          </svg>
+          Atendimento Rápido
+        </h3>
+
+        <p><strong>WhatsApp:</strong>  
+          <a href="https://wa.me/5561998721896" target="_blank">(61) 99872-1896</a>
+        </p>
+        <p><strong>Horário:</strong> Online e flexível</p>
+        <p style="font-size:0.86rem;color:#666;margin-top:6px;">
+          Atendemos todo o Brasil 🇧🇷
         </p>
       </div>
+
       <div class="contact-whats">
         <a class="btn-primary" target="_blank"
-           href="https://wa.me/5561998721896?text=Ol%C3%A1%2C%20vim%20do%20site%20cnhgovt.shop%20e%20quero%20ajuda%20com%20um%20servi%C3%A7o%20facilitado.">
-          Falar no WhatsApp agora
+           href="https://wa.me/5561998721896?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20preciso%20de%20ajuda%20com%20um%20servi%C3%A7o%20facilitado.">
+          💬 Chamar no WhatsApp agora
         </a>
-        <span>Respostas claras e atendimento humanizado</span>
+        <span>Resposta rápida e atendimento humanizado</span>
       </div>
     </div>
 
-    <!-- Formulário que gera mensagem pro WhatsApp -->
+    <!-- FORMULÁRIO -->
     <form id="contato-form">
       <div class="field">
         <label for="nome">Nome completo</label>
-        <input type="text" id="nome" name="Nome" placeholder="Seu nome" required>
+        <input type="text" id="nome" placeholder="Seu nome completo" required>
       </div>
+
       <div class="field">
         <label for="telefone">Telefone / WhatsApp</label>
-        <input type="text" id="telefone" name="Telefone" placeholder="(DDD) 9XXXX-XXXX">
+        <input type="text" id="telefone" placeholder="(DDD) 9XXXX-XXXX" required>
       </div>
+
       <div class="field">
         <label for="assunto">Assunto</label>
-        <input type="text" id="assunto" name="Assunto" placeholder="Ex.: CNH AB, transferência de veículo, multa, IPVA...">
+        <input type="text" id="assunto" placeholder="Ex.: CNH AB, transferência, multa, IPVA...">
       </div>
+
       <div class="field">
         <label for="mensagem">Mensagem</label>
-        <textarea id="mensagem" name="Mensagem" placeholder="Explique sua situação para podermos te orientar melhor."></textarea>
+        <textarea id="mensagem" placeholder="Explique sua situação para podermos te orientar melhor."></textarea>
       </div>
+
       <button type="submit" class="btn-primary">Enviar pelo WhatsApp</button>
     </form>
 
-    <p style="font-size:0.8rem;color:#6b7280;margin-top:10px;">
-      Ao clicar em “Enviar pelo WhatsApp”, vamos abrir o aplicativo/site do
-      WhatsApp com a mensagem já montada. Você só confere e aperta enviar.
+    <p style="font-size:0.8rem;color:#666;margin-top:10px;">
+      Ao clicar em “Enviar pelo WhatsApp”, abriremos o app/site com a mensagem já pronta.  
+      Você só confere e envia.
     </p>
+
   </section>
 </main>
 
-<!-- Botão flutuante WhatsApp -->
-<a href="https://wa.me/5561998721896?text=Ol%C3%A1%2C%20vim%20do%20site%20cnhgovt.shop%20e%20quero%20ajuda%20com%20um%20servi%C3%A7o%20facilitado."
-   class="whats-float" target="_blank" aria-label="Falar no WhatsApp">
-  💬
-</a>
+<!-- BOTÃO WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5561998721896?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20com%20meu%20caso."
+   class="whats-float" target="_blank">💬</a>
 
+<!-- FOOTER -->
 <footer>
-  © <span id="ano"></span> cnhgovt.shop - CNH, Veículos &amp; Serviços Facilitados.
+  Atendemos todo o Brasil 🇧🇷<br>
+  © <span id="ano"></span> cnhgovt.shop - CNH, Veículos & Serviços Facilitados.
 </footer>
 
 <script>
-  // ano do rodapé
   document.getElementById("ano").textContent = new Date().getFullYear();
 
-  // formulário → abre WhatsApp com mensagem montada
+  // FORM → GERA TEXTO AUTOMÁTICO → ABRE WHATSAPP
   document.getElementById("contato-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const nome = document.getElementById("nome").value.trim();
-    const tel = document.getElementById("telefone").value.trim();
-    const assunto = document.getElementById("assunto").value.trim();
-    const msg = document.getElementById("mensagem").value.trim();
+    const nome = document.getElementById("nome").value;
+    const tel = document.getElementById("telefone").value;
+    const assunto = document.getElementById("assunto").value;
+    const msg = document.getElementById("mensagem").value;
 
-    let texto = "Ol%C3%A1%2C%20vim%20do%20site%20cnhgovt.shop%20e%20quero%20ajuda%20com%20um%20servi%C3%A7o%20facilitado.%0A%0A";
+    let texto =
+      "Olá, vim do site cnhgovt.shop e quero ajuda com um serviço facilitado.%0A%0A" +
+      "Nome: " + encodeURIComponent(nome) + "%0A" +
+      "Telefone: " + encodeURIComponent(tel) + "%0A";
 
-    const partes = [];
-    if (nome) partes.push("Nome: " + nome);
-    if (tel) partes.push("Telefone: " + tel);
-    if (assunto) partes.push("Assunto: " + assunto);
-    if (msg) partes.push("Mensagem: " + msg);
-
-    if (partes.length > 0) {
-      const textoLivre = partes.join("\n");
-      texto += encodeURIComponent(textoLivre);
+    if (assunto.trim() !== "") {
+      texto += "Assunto: " + encodeURIComponent(assunto) + "%0A";
     }
 
-    const url = "https://wa.me/5561998721896?text=" + texto;
-    window.open(url, "_blank");
+    if (msg.trim() !== "") {
+      texto += "Mensagem: " + encodeURIComponent(msg) + "%0A";
+    }
+
+    const link = "https://wa.me/5561998721896?text=" + texto;
+
+    window.open(link, "_blank");
   });
 </script>
 
