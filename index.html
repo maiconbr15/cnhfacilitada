@@ -70,6 +70,7 @@
       </p>
     </div>
 
+    <!-- CHAT EM TEMPO REAL FAKE -->
     <div class="hero-box">
       <div class="hero-box-header">
         <span>Atendimento em tempo real</span>
@@ -77,18 +78,8 @@
       </div>
 
       <div class="chat-bubbles">
-        <div class="bubble bubble-user">
-          “Vocês mexem só com CNH?”
-        </div>
-        <div class="bubble bubble-atend">
-          “Não! Fazemos documentos, multas, transferências e muito mais.”
-        </div>
-        <div class="bubble bubble-user">
-          “Atendem fora do DF?”
-        </div>
-        <div class="bubble bubble-atend">
-          “Sim, <strong>atendemos todo o Brasil 🇧🇷</strong>.”
-        </div>
+        <div class="bubble bubble-user" id="bubble-pergunta"></div>
+        <div class="bubble bubble-atend" id="bubble-resposta"></div>
       </div>
     </div>
   </section>
@@ -152,7 +143,7 @@
 </main>
 
 <!-- Botão WhatsApp -->
-<a href="https://wa.me/5561998721896?text=Ol%C3%A1%2C%20quero%20informações%20sobre%20um%20serviço%20facilitado."
+<a href="https://wa.me/5561998721896?text=Ol%C3%A1%2C%20quero%20informações%20sobre%20um%20servi%C3%A7o%20facilitado."
    class="whats-float" target="_blank">💬</a>
 
 <footer>
@@ -160,8 +151,57 @@
   © <span id="ano"></span> cnhgovt.shop - CNH, Veículos & Serviços Facilitados.
 </footer>
 
+<!-- SCRIPT FINAL -->
 <script>
+  // ano no rodapé
   document.getElementById("ano").textContent = new Date().getFullYear();
+
+  // lista de perguntas e respostas aleatórias
+  const qaPairs = [
+    {
+      q: "Vocês mexem só com CNH?",
+      a: "Não! Fazemos CNH, documentos de veículos, multas, IPVA e vários serviços facilitados."
+    },
+    {
+      q: "Consigo resolver tudo pelo WhatsApp?",
+      a: "Grande parte sim. O que for obrigatório presencial (prova, exame, vistoria) a gente te orienta direitinho."
+    },
+    {
+      q: "Atendem só Brasília e Entorno?",
+      a: "Não! <strong>Atendemos todo o Brasil 🇧🇷</strong> com atendimento 100% online."
+    },
+    {
+      q: "Vocês são DETRAN?",
+      a: "Não, somos atendimento facilitado. Ajudamos você a seguir o caminho certo nos órgãos oficiais."
+    },
+    {
+      q: "Dá pra ver multas e pontos da minha CNH?",
+      a: "Sim, fazemos consulta completa e explicamos cada detalhe pra você entender tudo."
+    },
+    {
+      q: "Tô com documento atrasado, tem como organizar?",
+      a: "Tem sim. Você manda os dados e a gente monta o passo a passo certinho pra regularizar."
+    }
+  ];
+
+  let qaIndex = 0;
+
+  function atualizarChat() {
+    const perguntaEl = document.getElementById("bubble-pergunta");
+    const respostaEl = document.getElementById("bubble-resposta");
+
+    const pair = qaPairs[qaIndex];
+
+    perguntaEl.textContent = "“" + pair.q + "”";
+    respostaEl.innerHTML = "“" + pair.a + "”";
+
+    qaIndex = (qaIndex + 1) % qaPairs.length;
+  }
+
+  // primeira exibição
+  atualizarChat();
+  // troca a cada 6 segundos
+  setInterval(atualizarChat, 6000);
 </script>
 
 </body>
