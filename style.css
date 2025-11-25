@@ -263,31 +263,6 @@ main {
   color: #15803d;
 }
 
-.chat-bubbles {
-  margin-top: 6px;
-  margin-bottom: 10px;
-}
-
-.bubble {
-  max-width: 90%;
-  padding: 7px 10px;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  margin-bottom: 6px;
-}
-
-.bubble-user {
-  background: #e7f0ff;
-  border-bottom-right-radius: 2px;
-}
-
-.bubble-atend {
-  background: #1f4cff;
-  color: #fff;
-  margin-left: auto;
-  border-bottom-left-radius: 2px;
-}
-
 /* ============================
    SEÇÕES / CARDS
 ============================ */
@@ -534,4 +509,109 @@ footer {
   .top-contact {
     text-align: left;
   }
+}
+
+/* ============================
+   CHAT NOVO (com avatar + digitação)
+============================ */
+
+.chat-bubbles {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+.bubble {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  max-width: 100%;
+}
+
+.bubble-avatar {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.bubble-text {
+  max-width: 90%;
+  padding: 7px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+/* bolha do cliente */
+.bubble-user .bubble-text {
+  background: #e7f0ff;
+  color: #111827;
+  border-bottom-right-radius: 2px;
+}
+
+/* bolha do atendente */
+.bubble-atend .bubble-text {
+  background: #1f4cff;
+  color: #ffffff;
+  margin-left: auto;
+  border-bottom-left-radius: 2px;
+}
+
+.bubble-typing {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* ============================
+   DEPOIMENTOS AUTOMÁTICOS
+============================ */
+
+.depoimento-box {
+  margin-top: 25px;
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  text-align: center;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+.depo-avatar {
+  font-size: 2.4rem;
+  margin-bottom: 8px;
+}
+
+.depo-nome {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.depo-cidade {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.depo-estrelas {
+  font-size: 1.2rem;
+  color: #f0c400;
+  margin-bottom: 10px;
+}
+
+.depo-texto {
+  font-size: 1rem;
+  line-height: 1.4rem;
+  color: #333;
+  font-style: italic;
 }
