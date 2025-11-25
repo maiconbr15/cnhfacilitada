@@ -6,88 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Serviços facilitados: CNH, transferência, licenciamento, multas, IPVA e documentação. Atendemos todo o Brasil. Suporte rápido pelo WhatsApp.">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="img/favicon.png" type="image/png">
-
-  <!-- Estilos extras só para o chat e depoimentos -->
-  <style>
-    /* CHAT */
-    .chat-bubbles {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .bubble {
-      display: flex;
-      align-items: flex-start;
-      gap: 6px;
-      opacity: 1;
-      transform: translateY(0);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    .bubble-avatar {
-      font-size: 1.3rem;
-      flex-shrink: 0;
-      line-height: 1;
-    }
-
-    .bubble-text {
-      flex: 1;
-    }
-
-    .bubble-typing {
-      font-size: 0.8rem;
-      opacity: 0.8;
-      font-style: italic;
-    }
-
-    /* DEPOIMENTOS */
-    .depoimento-box {
-      margin-top: 25px;
-      background: #fff;
-      padding: 22px;
-      border-radius: 12px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-      text-align: center;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: opacity .5s ease, transform .5s ease;
-    }
-
-    .depo-avatar {
-      font-size: 2.4rem;
-      margin-bottom: 8px;
-    }
-
-    .depo-nome {
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-
-    .depo-cidade {
-      color: #666;
-      font-size: 0.9rem;
-      margin-bottom: 8px;
-    }
-
-    .depo-estrelas {
-      font-size: 1.2rem;
-      color: #f0c400;
-      margin-bottom: 10px;
-    }
-
-    .depo-texto {
-      font-size: 1rem;
-      line-height: 1.4rem;
-      color: #333;
-      font-style: italic;
-    }
-  </style>
+  <link rel="icon" href="img/logo.png" type="image/png">
 </head>
 <body>
 
@@ -227,18 +146,18 @@
   <source src="sounds/notify.mp3" type="audio/mpeg">
 </audio>
 
-<!-- SCRIPT FINAL -->
+<!-- SCRIPTS -->
 <script>
   document.getElementById("ano").textContent = new Date().getFullYear();
 
   /* CHAT ANIMADO */
   const qaPairs = [
-    { q: "Vocês mexem só com CNH?", a: "Não! Fazemos CNH, documentos de veículos, multas, IPVA e serviços facilitados." },
-    { q: "Consigo resolver tudo pelo WhatsApp?", a: "Sim! Onde a lei exige presença, te orientamos passo a passo." },
-    { q: "Atendem só DF e Goiás?", a: "Não! Atendemos todo o Brasil com atendimento 100% online." },
-    { q: "Vocês são DETRAN?", a: "Não. Somos atendimento facilitado, ajudando você no caminho correto." },
-    { q: "Dá pra consultar multas e pontos?", a: "Sim! Fazemos consulta completa explicando tudo certinho." },
-    { q: "Documento atrasado resolve?", a: "Resolve sim! Montamos o passo a passo pra organizar tudo." }
+    { q: "Vocês mexem só com CNH?", a: "Não! Fazemos CNH, veículos, multas, IPVA e serviços facilitados." },
+    { q: "Consigo resolver tudo pelo WhatsApp?", a: "Sim! Onde a lei exige presença, a gente orienta passo a passo." },
+    { q: "Atendem DF e Goiás?", a: "Sim, e também todo o Brasil com atendimento 100% online." },
+    { q: "Vocês são DETRAN?", a: "Não. Somos atendimento facilitado, guiando você no caminho oficial correto." },
+    { q: "Consulta de multas e pontos?", a: "Fazemos consulta completa e explicamos tudo com clareza." },
+    { q: "Documento atrasado resolve?", a: "Resolve sim! Organizamos tudo para regularizar seu caso." }
   ];
 
   let qaIndex = 0;
