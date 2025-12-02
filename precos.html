@@ -1,172 +1,202 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Planos e Valores - cnhgovt.shop</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Planos e valores para CNH facilitada, serviços de despachante, documentação veicular e consultorias.">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <meta charset="UTF-8" />
+  <title>Tabela de Preços - CNH Facilitada DF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Tabela de preços CNH Facilitada DF - primeira habilitação, renovação, troca de categoria e outros serviços veiculares." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-<header>
-  <div class="top-bar">
-    <div class="header-left">
+  <header class="topbar">
+    <div class="container topbar-inner">
       <div class="logo">
-        <img src="img/logo.svg" alt="cnhgovt.shop">
-        <div>
-          <div class="logo-text-title">cnhgovt.shop</div>
-          <div class="logo-text-sub">CNH & Serviços Veiculares</div>
+        <span class="logo-mark">CNH</span>
+        <div class="logo-text">
+          <span>CNH Facilitada</span>
+          <small>DF &amp; Entorno</small>
         </div>
       </div>
-      <nav class="nav-inner">
-        <a href="index.html#inicio">Início</a>
-        <a href="index.html#servicos">Serviços</a>
-        <a href="index.html#como-funciona">Como funciona</a>
-        <a href="precos.html" class="active">Preços</a>
-        <a href="admin.html">Painel</a>
-        <a href="index.html#contato">Contato</a>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="precos.html" class="nav-link active">Preços</a>
+        <a href="https://wa.me/5561998721896?text=Vim%20da%20tabela%20de%20pre%C3%A7os%20e%20quero%20mais%20detalhes." target="_blank" class="nav-link">WhatsApp</a>
+        <a href="admin.html" class="nav-link">Área do Cliente</a>
       </nav>
-    </div>
 
-    <div class="top-right">
-      <div class="top-contact">
-        <span>Atendimento online</span><br>
-        <a href="https://wa.me/5561998721896" target="_blank">(61) 99872-1896</a>
-      </div>
-      <div class="theme-toggle" id="themeToggle">
-        <div class="theme-toggle-knob" id="themeKnob">☀️</div>
-      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+        🌙
+      </button>
     </div>
-  </div>
-</header>
+  </header>
 
-<main class="section">
-  <div class="container">
-    <div class="pricing-hero">
-      <h1 class="section-title">Planos e valores</h1>
-      <p class="section-subtitle">
-        Cada caso é único, mas aqui você tem uma base de valores para entender como funciona.
-        O valor final sempre é combinado individualmente após análise do seu caso.
-      </p>
-    </div>
+  <main>
+    <section class="pricing-hero">
+      <div class="container">
+        <h1>Tabela de preços CNH Facilitada</h1>
+        <p class="section-subtitle">
+          Valores de referência para divulgação. Podem variar conforme análise de cada caso,
+          estado e taxas externas (Detran, laudos, exames, etc.).
+        </p>
 
-    <div class="pricing-grid">
-      <div class="plan">
-        <div class="plan-label">CNH</div>
-        <div class="plan-title">Plano CNH Facilitada</div>
-        <div class="plan-price">a partir de R$ 300</div>
-        <div class="plan-note">Consultoria e acompanhamento do processo.</div>
-        <ul>
-          <li>Primeira habilitação (AB).</li>
-          <li>Renovação de CNH.</li>
-          <li>Troca de categoria.</li>
-          <li>Organização de prazos e documentos.</li>
-        </ul>
-        <a class="btn-primary" target="_blank"
-           href="https://wa.me/5561998721896?text=Quero%20detalhes%20do%20Plano%20CNH%20Facilitada.">
-          Falar sobre CNH Facilitada
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <h3>Primeira habilitação</h3>
+            <p class="price-value">a partir de R$ 1.200,00</p>
+            <p class="price-obs">Categoria A, B ou AB (consulta conforme seu estado).</p>
+            <ul class="pricing-list">
+              <li>Orientação completa do início ao fim</li>
+              <li>Suporte via WhatsApp</li>
+              <li>Auxílio em agendamentos e dúvidas</li>
+            </ul>
+          </article>
+
+          <article class="pricing-card">
+            <h3>Troca / Adição de categoria</h3>
+            <p class="price-value">a partir de R$ 850,00</p>
+            <p class="price-obs">Para quem já possui CNH e quer adicionar outra categoria.</p>
+            <ul class="pricing-list">
+              <li>Verificação de requisitos e prazos</li>
+              <li>Suporte em todo o processo</li>
+              <li>Acompanhamento até a emissão da nova CNH</li>
+            </ul>
+          </article>
+
+          <article class="pricing-card">
+            <h3>Renovação de CNH</h3>
+            <p class="price-value">a partir de R$ 280,00</p>
+            <p class="price-obs">Taxa de assessoria (não inclui exames e taxas do Detran).</p>
+            <ul class="pricing-list">
+              <li>Agendamento de exames e renovação</li>
+              <li>Suporte para CNH vencida ou próxima do vencimento</li>
+              <li>Envio de CNH digital após liberação</li>
+            </ul>
+          </article>
+        </div>
+
+        <h2 style="margin-top: 2.2rem;">Serviços veiculares</h2>
+        <p class="section-subtitle">
+          Valores referentes à assessoria/consultoria. Taxas de Detran, cartório e terceiros
+          são cobradas à parte, quando necessário.
+        </p>
+
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <h3>Emissão CRLV 2025</h3>
+            <p class="price-value">R$ 50,00</p>
+            <p class="price-obs">Documento digital atualizado após pagamento de débitos.</p>
+            <ul class="pricing-list">
+              <li>Conferência de situação do veículo</li>
+              <li>Envio do CRLV digital por WhatsApp</li>
+            </ul>
+          </article>
+
+          <article class="pricing-card">
+            <h3>CRLV com débitos</h3>
+            <p class="price-value">R$ 25,00</p>
+            <p class="price-obs">Taxa de assessoria para orientação e emissão.</p>
+            <ul class="pricing-list">
+              <li>Orientação para regularização de IPVA, multas e licenciamento</li>
+              <li>Acompanhamento até liberações no sistema</li>
+            </ul>
+          </article>
+
+          <article class="pricing-card">
+            <h3>Transferência DF / GO</h3>
+            <p class="price-value">R$ 200,00</p>
+            <p class="price-obs">Transferência sem reconhecimento de firma do antigo proprietário.</p>
+            <ul class="pricing-list">
+              <li>Orientação sobre vistorias e documentos necessários</li>
+              <li>Procedimento 100% orientado online</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="pricing-grid" style="margin-top: 1.5rem;">
+          <article class="pricing-card">
+            <h3>Baixa média monta</h3>
+            <p class="price-value">R$ 250,00</p>
+            <p class="price-obs">Assessoria para retirada da restrição de média monta.</p>
+            <ul class="pricing-list">
+              <li>Conferência de laudos e documentação</li>
+              <li>Auxílio nos pedidos junto aos órgãos competentes</li>
+            </ul>
+          </article>
+
+          <article class="pricing-card">
+            <h3>Baixa arrendamento / financiamento</h3>
+            <p class="price-value">a partir de R$ 250,00</p>
+            <p class="price-obs">Regularização após quitação de contrato com banco/financeira.</p>
+            <ul class="pricing-list">
+              <li>Conferência de documentos do banco</li>
+              <li>Acompanhamento da baixa no Detran</li>
+            </ul>
+          </article>
+
+          <article class="pricing-card">
+            <h3>Consulta veicular completa</h3>
+            <p class="price-value">a partir de R$ 39,90</p>
+            <p class="price-obs">Situação do veículo, débitos, restrições e histórico básico.</p>
+            <ul class="pricing-list">
+              <li>Envio de relatório em PDF ou WhatsApp</li>
+              <li>Ideal antes de comprar ou vender um veículo</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="section-subtitle" style="margin-top: 2rem;">
+          <strong>Importante:</strong> Valores podem ser atualizados sem aviso prévio. Em caso
+          de dúvidas ou para orçamento completo, fale conosco pelo WhatsApp.
+        </p>
+
+        <a href="https://wa.me/5561998721896?text=Vim%20da%20tabela%20de%20pre%C3%A7os%20e%20quero%20um%20or%C3%A7amento%20completo." target="_blank" class="btn btn-primary">
+          Solicitar orçamento detalhado
         </a>
       </div>
+    </section>
+  </main>
 
-      <div class="plan">
-        <div class="plan-label">VEÍCULO</div>
-        <div class="plan-title">Plano Veicular</div>
-        <div class="plan-price">a partir de R$ 200</div>
-        <div class="plan-note">Serviços tipo despachante digital.</div>
-        <ul>
-          <li>Transferência de veículo.</li>
-          <li>CRLV / licenciamento.</li>
-          <li>Atualização de dados.</li>
-          <li>Orientação para vistoria.</li>
-        </ul>
-        <a class="btn-primary" target="_blank"
-           href="https://wa.me/5561998721896?text=Quero%20detalhes%20do%20Plano%20Veicular.">
-          Falar sobre serviços veiculares
-        </a>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p>&copy; <span id="year"></span> CNH Facilitada DF. Todos os direitos reservados.</p>
+        <p class="footer-note">
+          Não somos Detran nem órgão oficial. Atuação como consultoria e assessoria em
+          processos de CNH e serviços veiculares.
+        </p>
       </div>
-
-      <div class="plan">
-        <div class="plan-label">MULTAS & DÉBITOS</div>
-        <div class="plan-title">Plano Situação Completa</div>
-        <div class="plan-price">a partir de R$ 150</div>
-        <div class="plan-note">Consulta e explicação detalhada.</div>
-        <ul>
-          <li>Consulta de multas e pontos.</li>
-          <li>Checagem de IPVA e débitos.</li>
-          <li>Resumo da situação da CNH e veículo.</li>
-          <li>Possíveis caminhos de regularização.</li>
-        </ul>
-        <a class="btn-primary" target="_blank"
-           href="https://wa.me/5561998721896?text=Quero%20detalhes%20do%20Plano%20Situa%C3%A7%C3%A3o%20Completa.">
-          Ver minha situação completa
-        </a>
-      </div>
-
-      <div class="plan">
-        <div class="plan-label">CASOS TRAVADOS</div>
-        <div class="plan-title">Plano Personalizado</div>
-        <div class="plan-price">sob consulta</div>
-        <div class="plan-note">Indicado para casos mais complexos.</div>
-        <ul>
-          <li>Processos antigos ou parados.</li>
-          <li>Veículos com documentação muito atrasada.</li>
-          <li>Situações específicas com DETRAN.</li>
-          <li>Estudo detalhado do caso.</li>
-        </ul>
-        <a class="btn-outline" target="_blank"
-           href="https://wa.me/5561998721896?text=Tenho%20um%20caso%20travado%20e%20quero%20uma%20an%C3%A1lise%20personalizada.">
-          Explicar meu caso especial
-        </a>
+      <div class="footer-right">
+        <a href="https://cnhgovt.shop/" target="_blank" class="footer-link">Site oficial</a>
+        <a href="https://wa.me/5561998721896" target="_blank" class="footer-link">WhatsApp</a>
       </div>
     </div>
+  </footer>
 
-    <div class="section-cta">
-      <p class="section-subtitle">
-        Os valores podem mudar conforme estado, órgão e taxas oficiais.
-        Antes de fechar qualquer serviço, você sempre vai saber o que é taxa oficial e o que é honorário.
-      </p>
-      <a class="btn-primary" target="_blank"
-         href="https://wa.me/5561998721896?text=Quero%20uma%20simula%C3%A7%C3%A3o%20de%20valores%20pro%20meu%20caso.">
-        💬 Pedir simulação para o meu caso
-      </a>
-    </div>
+  <script>
+    (function() {
+      const storedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', storedTheme);
 
-  </div>
-</main>
+      const btn = document.getElementById('themeToggle');
+      const updateIcon = () => {
+        const theme = document.documentElement.getAttribute('data-theme');
+        if (btn) btn.textContent = theme === 'light' ? '☀️' : '🌙';
+      };
+      updateIcon();
 
-<a href="https://wa.me/5561998721896?text=Ol%C3%A1%2C%20vim%20da%20p%C3%A1gina%20de%20pre%C3%A7os%20e%20quero%20ajuda."
-   class="whats-float" target="_blank">💬</a>
+      if (btn) {
+        btn.addEventListener('click', () => {
+          const current = document.documentElement.getAttribute('data-theme');
+          const next = current === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+          updateIcon();
+        });
+      }
+    })();
 
-<footer>
-  © <span id="ano"></span> cnhgovt.shop — CNH & Serviços Veiculares Facilitados.
-</footer>
-
-<script>
-  // ano
-  document.getElementById('ano').textContent = new Date().getFullYear();
-
-  // tema salvo
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark');
-  }
-
-  const themeToggle = document.getElementById('themeToggle');
-  const themeKnob = document.getElementById('themeKnob');
-
-  function updateThemeKnob() {
-    themeKnob.textContent = document.body.classList.contains('dark') ? '🌙' : '☀️';
-  }
-  updateThemeKnob();
-
-  themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-    updateThemeKnob();
-  });
-</script>
-
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
