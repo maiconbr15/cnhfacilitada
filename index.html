@@ -6,50 +6,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="CNH facilitada, serviços de despachante, transferências, documentação, multas e IPVA. Atendimento online em todo o Brasil via WhatsApp.">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="img/logo.png" type="image/png">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
 </head>
 <body>
 
-<header id="topo">
+<header>
   <div class="top-bar">
-    <div class="logo">
-      <img src="img/logo.png" alt="Logo cnhgovt.shop">
-      <div class="logo-text">
-        cnhgovt.shop
-        <span>CNH & Serviços Veiculares Facilitados</span>
+    <div class="header-left">
+      <div class="logo">
+        <img src="img/logo.svg" alt="cnhgovt.shop">
+        <div>
+          <div class="logo-text-title">cnhgovt.shop</div>
+          <div class="logo-text-sub">CNH & Serviços Veiculares</div>
+        </div>
       </div>
+      <nav class="nav-inner">
+        <a href="#inicio" class="active">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="precos.html">Preços</a>
+        <a href="admin.html">Painel</a>
+        <a href="#contato">Contato</a>
+      </nav>
     </div>
-    <nav class="nav-inner">
-      <a href="#inicio" class="active">Início</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#depoimentos">Depoimentos</a>
-      <a href="#duvidas">Dúvidas</a>
-      <a href="#contato">Contato</a>
-    </nav>
-    <div class="top-contact">
-      <span>Atendimento online</span><br>
-      <a href="https://wa.me/5561998721896" target="_blank">(61) 99872-1896</a>
+
+    <div class="top-right">
+      <div class="top-contact">
+        <span>Atendimento online</span><br>
+        <a href="https://wa.me/5561998721896" target="_blank">(61) 99872-1896</a>
+      </div>
+      <div class="theme-toggle" id="themeToggle">
+        <div class="theme-toggle-knob" id="themeKnob">☀️</div>
+      </div>
     </div>
   </div>
 </header>
 
 <main>
 
-  <!-- HERO / INÍCIO -->
-  <section id="inicio" class="hero hero-bg">
+  <!-- HERO -->
+  <section id="inicio" class="hero">
     <div class="hero-left">
-      <div class="hero-pill">Atendimento em todo o Brasil 🇧🇷</div>
-      <h1>CNH & Documentos veiculares <span>sem dor de cabeça</span></h1>
+      <div class="hero-pill">
+        Atendimento em todo o Brasil 🇧🇷
+        <span>CNH, veículos, multas e documentação</span>
+      </div>
+      <h1>CNH e documentos veiculares <span>sem dor de cabeça</span></h1>
       <p>
-        Tirar, renovar ou regularizar sua CNH e documentação do veículo não precisa ser complicado.
-        Organizo tudo pra você, explicando cada etapa de forma simples e direta.
+        Eu ajudo você a organizar tudo que envolve CNH, veículo, multas, IPVA e processos travados.
+        Atendimento direto pelo WhatsApp, com explicação simples e objetiva.
       </p>
 
       <div class="hero-badges">
-        <div class="badge">Primeira habilitação</div>
-        <div class="badge">Transferência & CRLV</div>
-        <div class="badge">Multas & Pontos</div>
+        <div class="badge">CNH facilitada</div>
+        <div class="badge">Despachante digital</div>
+        <div class="badge">Multas & pontos</div>
       </div>
 
       <div class="hero-buttons">
@@ -63,17 +74,15 @@
       </div>
 
       <p class="hero-small">
-        Resposta rápida, atendimento humanizado e explicação clara.  
-        Sem enrolação, sem linguagem complicada.
+        Menos fila, menos estresse, menos dúvida.  
+        Você entende o processo e sabe exatamente o próximo passo.
       </p>
     </div>
 
     <div class="hero-right">
       <div class="hero-card">
         <div class="hero-card-header">
-          <div>
-            <span class="online-dot"></span> Atendimento agora
-          </div>
+          <span><span class="online-dot"></span> Atendimento em tempo real</span>
           <span class="hero-card-tag">Consultoria facilitada</span>
         </div>
 
@@ -89,7 +98,7 @@
         </div>
 
         <div class="hero-card-footer">
-          <span>Atendo DF, Entorno e todo o Brasil pela internet.</span>
+          DF, Entorno e todo o Brasil com atendimento online via WhatsApp.
         </div>
       </div>
     </div>
@@ -100,7 +109,7 @@
     <div class="container">
       <h2 class="section-title">Serviços que posso resolver pra você</h2>
       <p class="section-subtitle">
-        Do primeiro passo da CNH até documentação atrasada, organizo tudo e te mostro o caminho certo.
+        Do primeiro passo da CNH até documentação atrasada, organizo tudo e mostro o caminho certo.
       </p>
 
       <div class="cards">
@@ -109,11 +118,11 @@
           <h3>CNH Facilitada</h3>
           <ul class="card-list">
             <li>Primeira habilitação (AB)</li>
-            <li>Renovação da CNH</li>
+            <li>Renovação de CNH</li>
             <li>Troca de categoria</li>
-            <li>Ajuda com CNH digital</li>
+            <li>Ajuda com CNH Digital</li>
           </ul>
-          <p class="card-foot">Explico o passo a passo completo, sem termos complicados.</p>
+          <p class="card-foot">Você sabe o que fazer em cada etapa, sem linguagem complicada.</p>
         </div>
 
         <div class="card">
@@ -122,39 +131,39 @@
             <li>Transferência de veículo</li>
             <li>CRLV / licenciamento</li>
             <li>Atualização de dados</li>
-            <li>Suporte em vistoria</li>
+            <li>Orientação para vistoria</li>
           </ul>
-          <p class="card-foot">Tudo organizado: o que é taxa oficial e o que é serviço.</p>
+          <p class="card-foot">Explico o que é taxa oficial e o que é serviço, sem surpresa.</p>
         </div>
 
         <div class="card">
           <h3>Multas, Pontos & IPVA</h3>
           <ul class="card-list">
             <li>Consulta de multas</li>
-            <li>Pontuação da CNH</li>
-            <li>Débitos de IPVA</li>
-            <li>Orientação para regularização</li>
+            <li>Situação da CNH e pontuação</li>
+            <li>IPVA e débitos pendentes</li>
+            <li>Opções para regularizar</li>
           </ul>
-          <p class="card-foot">Você entende exatamente o que está acontecendo no seu prontuário.</p>
+          <p class="card-foot">Você recebe um panorama completo da sua situação.</p>
         </div>
 
         <div class="card">
           <h3>Casos Travados & Especiais</h3>
           <ul class="card-list">
             <li>Processos parados</li>
-            <li>Documentos antigos</li>
-            <li>Veículo com débito acumulado</li>
+            <li>Veículo com documentos antigos</li>
+            <li>Débitos acumulados</li>
             <li>Dúvidas específicas de DETRAN</li>
           </ul>
-          <p class="card-foot">Análise individual do seu caso e melhor caminho pra resolver.</p>
+          <p class="card-foot">Análise individual do seu caso e melhor estratégia.</p>
         </div>
 
       </div>
 
       <div class="section-cta">
         <a class="btn-primary" target="_blank"
-           href="https://wa.me/5561998721896?text=Quero%20ajuda%20com%20um%20servi%C3%A7o%20veicular%20ou%20CNH.">
-          👉 Me contar seu caso pelo WhatsApp
+           href="https://wa.me/5561998721896?text=Quero%20ajuda%20com%20um%20servi%C3%A7o%20de%20CNH%20ou%20ve%C3%ADculo.">
+          👉 Explicar meu caso pelo WhatsApp
         </a>
       </div>
     </div>
@@ -169,16 +178,16 @@
       </p>
 
       <ol class="steps">
-        <li>Você me chama no WhatsApp e explica rapidamente o que precisa (CNH, veículo, multa, documento atrasado...).</li>
-        <li>Faço algumas perguntas simples para entender a situação real e ver o que é possível fazer.</li>
-        <li>Peço apenas os dados e fotos necessárias para análise inicial, direto pelo WhatsApp.</li>
-        <li>Organizo um passo a passo claro: o que fazemos online, o que depende de você e quais taxas existem.</li>
-        <li>Se tiver parte presencial (DETRAN, prova, exame, vistoria), te preparo antes para não ter erro.</li>
-        <li>Você pode mandar prints e dúvidas durante o processo, até finalizar tudo que for possível.</li>
+        <li>Você me chama no WhatsApp e conta, em poucas frases, o que está acontecendo.</li>
+        <li>Faço perguntas simples para entender certinho seu caso (CNH, veículo, multas, débitos...).</li>
+        <li>Com base nas informações, vejo o que a lei permite, o que é obrigatório e o que é opcional.</li>
+        <li>Te envio um passo a passo claro: o que eu resolvo online e o que depende de presença em algum órgão.</li>
+        <li>Se tiver prova, exame, vistoria ou cartório, já te preparo antes para evitar erro ou retrabalho.</li>
+        <li>Você pode mandar prints e dúvidas durante o processo até finalizar tudo que for possível.</li>
       </ol>
 
-      <p class="section-subtitle small">
-        A ideia é simples: menos estresse, menos fila, menos confusão. Mais clareza e resultado.
+      <p class="section-subtitle">
+        A ideia é simples: menos estresse, menos fila, menos dúvida. Mais clareza e resultado.
       </p>
     </div>
   </section>
@@ -186,9 +195,9 @@
   <!-- DEPOIMENTOS -->
   <section id="depoimentos" class="section">
     <div class="container">
-      <h2 class="section-title">O que falam do atendimento</h2>
+      <h2 class="section-title">Depoimentos de quem já foi atendido</h2>
       <p class="section-subtitle">
-        Pessoas do DF, Entorno e todo Goiás já confiaram e recomendaram o atendimento.
+        Gente do DF, Entorno e Goiás que resolveu o que precisava com atendimento online.
       </p>
 
       <div id="depoimento-box" class="depoimento-box">
@@ -207,28 +216,23 @@
       <h2 class="section-title">Dúvidas comuns</h2>
 
       <div class="faq-item">
-        <strong>Vocês atendem só DF e Entorno?</strong>
-        <span>Não. O atendimento é online e posso orientar clientes de qualquer estado do Brasil.</span>
-      </div>
-
-      <div class="faq-item">
         <strong>Vocês são DETRAN?</strong>
-        <span>Não. Eu atuo como consultoria/apoio para organizar o processo, explicar e te guiar dentro das regras oficiais.</span>
+        <span>Não. Eu faço a parte de orientação, organização e acompanhamento. Tudo sempre dentro das regras oficiais.</span>
       </div>
 
       <div class="faq-item">
-        <strong>Consigo resolver tudo pelo WhatsApp?</strong>
-        <span>Grande parte sim. Onde a lei exige presença (prova, exame, vistoria, cartório), você vai pessoalmente, mas já sabendo o que fazer.</span>
+        <strong>Atende só DF e Entorno?</strong>
+        <span>Não. Atendo DF, Entorno e qualquer estado do Brasil, com atendimento online via WhatsApp.</span>
       </div>
 
       <div class="faq-item">
-        <strong>Preciso mandar documento físico?</strong>
-        <span>Na análise inicial, não. Você manda fotos nítidas pelo WhatsApp. Documento físico só quando o órgão oficial exigir.</span>
+        <strong>Consigo resolver tudo sem sair de casa?</strong>
+        <span>Muita coisa sim. Quando a lei exige presença (exame, vistoria, prova, cartório), eu te preparo antes.</span>
       </div>
 
       <div class="faq-item">
-        <strong>Como sei quanto vou pagar?</strong>
-        <span>Cada caso é diferente. Eu analiso sua situação e te falo o que é taxa oficial, o que é serviço e o que pode ser feito.</span>
+        <strong>Você cobra só depois de analisar o caso?</strong>
+        <span>Primeiro entendo sua situação, explico as possibilidades e só então combinamos valores de serviço.</span>
       </div>
 
       <div class="section-cta">
@@ -245,7 +249,7 @@
     <div class="container">
       <h2 class="section-title">Fale comigo</h2>
       <p class="section-subtitle">
-        Me chama no WhatsApp ou preenche os dados abaixo que eu te respondo por lá.
+        Me chama no WhatsApp ou preenche os dados que eu retorno por lá.
       </p>
 
       <div class="contact-grid">
@@ -254,15 +258,15 @@
             <p><strong>WhatsApp direto:</strong><br>
               <a href="https://wa.me/5561998721896" target="_blank">(61) 99872-1896</a>
             </p>
-            <p><strong>Atendimento:</strong> Online, com horários flexíveis.</p>
             <p><strong>Região:</strong> DF, Entorno e todo o Brasil 🇧🇷</p>
+            <p><strong>Atendimento:</strong> Horários flexíveis, resposta rápida.</p>
           </div>
           <div class="contact-whats">
             <a class="btn-primary" target="_blank"
                href="https://wa.me/5561998721896?text=Ol%C3%A1%2C%20quero%20ajuda%20com%20meu%20caso%20de%20CNH%20ou%20ve%C3%ADculo.">
               💬 Abrir conversa no WhatsApp
             </a>
-            <span>Resposta rápida e atendimento humanizado.</span>
+            <p class="hero-small">Me manda um resumo da situação que eu já te respondo com o melhor caminho.</p>
           </div>
         </div>
 
@@ -283,8 +287,8 @@
             <label for="mensagem">Explique sua situação</label>
             <textarea id="mensagem" placeholder="Conte um pouco o que está acontecendo para eu poder te orientar melhor."></textarea>
           </div>
-          <button type="submit" class="btn-primary">Enviar pelo WhatsApp</button>
-          <p class="form-note">Ao clicar, vamos montar a mensagem automaticamente e abrir o WhatsApp pra você enviar.</p>
+          <button type="submit" class="btn-primary">Enviar dados e abrir WhatsApp</button>
+          <p class="form-note">Vamos montar a mensagem automaticamente e abrir o WhatsApp para você confirmar o envio.</p>
         </form>
       </div>
     </div>
@@ -292,52 +296,74 @@
 
 </main>
 
-<!-- BOTÃO WHATSAPP FIXO -->
+<!-- WHATSAPP FLUTUANTE -->
 <a href="https://wa.me/5561998721896?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20preciso%20de%20ajuda."
    class="whats-float" target="_blank">💬</a>
 
 <footer>
-  © <span id="ano"></span> cnhgovt.shop — CNH & Serviços Veiculares Facilitados.  
-  Atendimento em todo o Brasil 🇧🇷
+  © <span id="ano"></span> cnhgovt.shop — CNH & Serviços Veiculares Facilitados. Atendimento em todo o Brasil 🇧🇷
 </footer>
 
-<!-- SOM NOTIFICAÇÃO CHAT -->
 <audio id="notify-sound" preload="auto">
   <source src="sounds/notify.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-  // ano no rodapé
-  document.getElementById("ano").textContent = new Date().getFullYear();
+  // ano rodapé
+  document.getElementById('ano').textContent = new Date().getFullYear();
 
-  /* CHAT ANIMADO */
+  // tema salvo
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark');
+  }
+
+  const themeToggle = document.getElementById('themeToggle');
+  const themeKnob = document.getElementById('themeKnob');
+
+  function updateThemeKnob() {
+    if (document.body.classList.contains('dark')) {
+      themeKnob.textContent = '🌙';
+    } else {
+      themeKnob.textContent = '☀️';
+    }
+  }
+  updateThemeKnob();
+
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    updateThemeKnob();
+  });
+
+  // CHAT ANIMADO
   const qaPairs = [
-    { q: "Vocês mexem só com CNH?", a: "Não. Trabalho com CNH, documentos de veículos, multas, IPVA e casos travados." },
-    { q: "Consigo resolver quase tudo pelo WhatsApp?", a: "Sim. Onde precisar presença (DETRAN, exame, vistoria), eu te preparo antes." },
-    { q: "Atende só DF e Entorno?", a: "Atendo DF, Entorno e qualquer estado do Brasil com atendimento online." },
-    { q: "Vocês são DETRAN?", a: "Não. Faço a parte de orientação, organização e acompanhamento do processo." },
-    { q: "Dá pra consultar multas e pontos?", a: "Faço consulta completa, explico cada item e mostro as opções que você tem." },
-    { q: "Documento atrasado resolve?", a: "Organizo seu caso, mostro débitos e o melhor passo a passo pra regularizar." }
+    { q: 'Vocês mexem só com CNH?', a: 'Não. Trabalho com CNH, veículos, multas, IPVA e casos travados.' },
+    { q: 'Consigo resolver quase tudo pelo WhatsApp?', a: 'Sim. Onde precisar presença (DETRAN, exame, vistoria), eu te preparo antes.' },
+    { q: 'Atende só DF e Entorno?', a: 'Atendo DF, Entorno e qualquer estado do Brasil com atendimento online.' },
+    { q: 'Vocês são DETRAN?', a: 'Não. Faço a parte de orientação, organização e acompanhamento do processo.' },
+    { q: 'Dá pra consultar multas e pontos?', a: 'Faço consulta completa, explico cada item e mostro as opções que você tem.' },
+    { q: 'Documento atrasado resolve?', a: 'Organizo seu caso, mostro débitos e o melhor passo a passo pra regularizar.' }
   ];
 
   let qaIndex = 0;
   let typingInterval = null;
 
   function playNotification() {
-    const audio = document.getElementById("notify-sound");
+    const audio = document.getElementById('notify-sound');
     if (!audio) return;
     try {
       audio.currentTime = 0;
       audio.play().catch(() => {});
-    } catch (e) {}
+    } catch(e) {}
   }
 
   function typeText(element, text, callback) {
     if (typingInterval) clearInterval(typingInterval);
-    element.textContent = "“";
+    element.textContent = '“';
     let i = 0;
     typingInterval = setInterval(() => {
-      element.textContent = "“" + text.slice(0, i) + "”";
+      element.textContent = '“' + text.slice(0, i) + '”';
       i++;
       if (i > text.length) {
         clearInterval(typingInterval);
@@ -347,25 +373,24 @@
   }
 
   function animateBubble(el) {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(4px)";
+    el.style.opacity = '0.4';
+    el.style.transform = 'translateY(4px)';
     setTimeout(() => {
-      el.style.opacity = "1";
-      el.style.transform = "translateY(0)";
-    }, 30);
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, 80);
   }
 
   function atualizarChat() {
-    const pBubble = document.getElementById("bubble-pergunta");
-    const rBubble = document.getElementById("bubble-resposta");
+    const pBubble = document.getElementById('bubble-pergunta');
+    const rBubble = document.getElementById('bubble-resposta');
 
-    const pText = pBubble.querySelector(".bubble-text");
-    const rText = rBubble.querySelector(".bubble-text");
+    const pText = pBubble.querySelector('.bubble-text');
+    const rText = rBubble.querySelector('.bubble-text');
 
     const pair = qaPairs[qaIndex];
 
-    pText.textContent = "“" + pair.q + "”";
-
+    pText.textContent = '“' + pair.q + '”';
     animateBubble(pBubble);
     animateBubble(rBubble);
 
@@ -374,7 +399,7 @@
     setTimeout(() => {
       playNotification();
       typeText(rText, pair.a);
-    }, 800);
+    }, 700);
 
     qaIndex = (qaIndex + 1) % qaPairs.length;
   }
@@ -382,57 +407,52 @@
   atualizarChat();
   setInterval(atualizarChat, 7000);
 
-  /* DEPOIMENTOS ROTATIVOS */
+  // DEPOIMENTOS ROTATIVOS
   const depoimentos = [
-    { avatar: "🙂", nome: "Lucas Ferreira", cidade: "Taguatinga - DF", texto: "Renovei minha CNH com orientação dele. Explicação simples e direta, sem enrolação." },
-    { avatar: "😊", nome: "Maria Santos", cidade: "Águas Lindas - GO", texto: "Tava perdida com documento atrasado do carro. Hoje está tudo regularizado." },
-    { avatar: "😀", nome: "Rafael Almeida", cidade: "Ceilândia - DF", texto: "Consulta de pontos e multas completa. Agora sei exatamente minha situação." },
-    { avatar: "😄", nome: "Pedro Carvalho", cidade: "Luziânia - GO", texto: "Atendimento rápido pelo WhatsApp. Me ajudou a organizar IPVA e taxas pendentes." },
-    { avatar: "😁", nome: "Ana Paula", cidade: "Valparaíso - GO", texto: "Muito paciente pra explicar. Me senti segura em cada passo do processo." }
+    { avatar: '🙂', nome: 'Lucas Ferreira', cidade: 'Taguatinga - DF', texto: 'Renovei minha CNH com orientação dele. Explicação simples e direta, sem enrolação.' },
+    { avatar: '😊', nome: 'Maria Santos', cidade: 'Águas Lindas - GO', texto: 'Eu não entendia nada do meu documento atrasado. Hoje está tudo regularizado.' },
+    { avatar: '😀', nome: 'Rafael Almeida', cidade: 'Ceilândia - DF', texto: 'Consulta completa de multas e pontos. Agora sei exatamente minha situação.' },
+    { avatar: '😄', nome: 'Pedro Carvalho', cidade: 'Luziânia - GO', texto: 'Me ajudou a organizar IPVA e taxas pendentes, tudo explicado passo a passo.' },
+    { avatar: '😁', nome: 'Ana Paula', cidade: 'Valparaíso - GO', texto: 'Muito paciente pra explicar. Me senti segura em cada etapa do processo.' }
   ];
 
   let dIndex = 0;
-
   function mostrarDepoimento() {
-    const box = document.getElementById("depoimento-box");
-
-    box.style.opacity = "0";
-    box.style.transform = "translateY(8px)";
+    const box = document.getElementById('depoimento-box');
+    box.style.opacity = '0';
+    box.style.transform = 'translateY(10px)';
 
     setTimeout(() => {
       const d = depoimentos[dIndex];
-      box.querySelector(".depo-avatar").textContent = d.avatar;
-      box.querySelector(".depo-nome").textContent = d.nome;
-      box.querySelector(".depo-cidade").textContent = d.cidade;
-      box.querySelector(".depo-texto").textContent = "“" + d.texto + "”";
+      box.querySelector('.depo-avatar').textContent = d.avatar;
+      box.querySelector('.depo-nome').textContent = d.nome;
+      box.querySelector('.depo-cidade').textContent = d.cidade;
+      box.querySelector('.depo-texto').textContent = '“' + d.texto + '”';
 
-      box.style.opacity = "1";
-      box.style.transform = "translateY(0)";
-
+      box.style.opacity = '1';
+      box.style.transform = 'translateY(0)';
       dIndex = (dIndex + 1) % depoimentos.length;
-    }, 300);
+    }, 250);
   }
-
   mostrarDepoimento();
   setInterval(mostrarDepoimento, 5000);
 
-  /* FORMULÁRIO → WHATSAPP */
-  document.getElementById("contato-form").addEventListener("submit", function(e) {
+  // FORM → WHATSAPP
+  document.getElementById('contato-form').addEventListener('submit', function(e) {
     e.preventDefault();
+    const nome = document.getElementById('nome').value.trim();
+    const whats = document.getElementById('whats').value.trim();
+    const assunto = document.getElementById('assunto').value.trim();
+    const msg = document.getElementById('mensagem').value.trim();
 
-    const nome = document.getElementById("nome").value.trim();
-    const whats = document.getElementById("whats").value.trim();
-    const assunto = document.getElementById("assunto").value.trim();
-    const msg = document.getElementById("mensagem").value.trim();
+    let texto = 'Ol%C3%A1%2C%20vim%20do%20site%20cnhgovt.shop%20e%20quero%20ajuda%20com%20meu%20caso.%0A%0A';
+    if (nome) texto += 'Nome%3A%20' + encodeURIComponent(nome) + '%0A';
+    if (whats) texto += 'WhatsApp%3A%20' + encodeURIComponent(whats) + '%0A';
+    if (assunto) texto += 'Assunto%3A%20' + encodeURIComponent(assunto) + '%0A';
+    if (msg) texto += 'Mensagem%3A%20' + encodeURIComponent(msg) + '%0A';
 
-    let texto = "Ol%C3%A1%2C%20vim%20do%20site%20cnhgovt.shop%20e%20quero%20ajuda%20com%20meu%20caso.%0A%0A";
-    if (nome) texto += "Nome%3A%20" + encodeURIComponent(nome) + "%0A";
-    if (whats) texto += "WhatsApp%3A%20" + encodeURIComponent(whats) + "%0A";
-    if (assunto) texto += "Assunto%3A%20" + encodeURIComponent(assunto) + "%0A";
-    if (msg) texto += "Mensagem%3A%20" + encodeURIComponent(msg) + "%0A";
-
-    const link = "https://wa.me/5561998721896?text=" + texto;
-    window.open(link, "_blank");
+    const link = 'https://wa.me/5561998721896?text=' + texto;
+    window.open(link, '_blank');
   });
 </script>
 
