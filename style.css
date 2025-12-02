@@ -30,7 +30,7 @@ html {
   --radius-full: 999px;
 }
 
-/* Tema claro */
+/* Tema claro (light) */
 :root[data-theme="light"] {
   --bg: #f5f5f7;
   --bg-elevated: #ffffff;
@@ -40,7 +40,7 @@ html {
   --accent-strong: #15803d;
   --text: #111827;
   --text-soft: #6b7280;
-  --border-subtle: rgba(15, 23, 42, 0.08);
+  --border-subtle: rgba(15, 23, 42, 0.12);
   --shadow-soft: 0 18px 38px rgba(148, 163, 184, 0.35);
 }
 
@@ -50,6 +50,11 @@ body {
     "Segoe UI", sans-serif;
   background: radial-gradient(circle at top, #0f172a 0, #020617 45%, #000 100%);
   color: var(--text);
+}
+
+/* Ajuste extra pro body no tema claro */
+html[data-theme="light"] body {
+  background: #f5f5f7;
 }
 
 /* Contêiner geral */
@@ -70,8 +75,13 @@ body {
   top: 0;
   z-index: 50;
   backdrop-filter: blur(14px);
-  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), transparent);
+  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), transparent);
   border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+html[data-theme="light"] .topbar {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), transparent);
+  border-bottom-color: rgba(15, 23, 42, 0.08);
 }
 
 .topbar-inner {
@@ -157,13 +167,17 @@ body {
 
 .theme-toggle {
   border: 1px solid var(--border-subtle);
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(15, 23, 42, 0.9);
   color: var(--text);
   border-radius: 999px;
   padding: 0.35rem 0.7rem;
   font-size: 0.9rem;
   cursor: pointer;
   box-shadow: 0 14px 35px rgba(15, 23, 42, 0.5);
+}
+
+html[data-theme="light"] .theme-toggle {
+  background: #ffffff;
 }
 
 /* ============================
@@ -253,6 +267,10 @@ body {
   background: rgba(15, 23, 42, 0.7);
 }
 
+html[data-theme="light"] .btn-ghost:hover {
+  background: rgba(229, 231, 235, 0.9);
+}
+
 .btn-outline {
   background: transparent;
   border-color: var(--accent);
@@ -303,4 +321,416 @@ body {
 .hero-card-footer a {
   color: var(--accent);
   text-decoration: none;
+}
+
+/* Tema claro para cards principais */
+html[data-theme="light"] .hero-card,
+html[data-theme="light"] .step-card,
+html[data-theme="light"] .service-card,
+html[data-theme="light"] .pricing-card,
+html[data-theme="light"] .admin-card,
+html[data-theme="light"] .cta-inner {
+  background: #ffffff;
+  border-color: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 30px rgba(148, 163, 184, 0.3);
+}
+
+/* ============================
+   SESSÕES COMUNS
+============================ */
+
+section {
+  padding: 2.8rem 0;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  margin-bottom: 1.6rem;
+}
+
+/* Passo a passo */
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.3rem;
+}
+
+.step-card {
+  border-radius: 1rem;
+  padding: 1.2rem 1.2rem 1.1rem;
+  background: radial-gradient(circle at top, #020617 0, #020617 55%, #000 100%);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.8);
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  font-size: 0.75rem;
+  color: var(--text-soft);
+  margin-bottom: 0.6rem;
+}
+
+.step-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.step-card p {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+/* Serviços */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.service-card {
+  border-radius: 1rem;
+  padding: 1.05rem 1.05rem 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: radial-gradient(circle at top, #020617 0, #020617 50%, #000 100%);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.85);
+}
+
+.service-card h3 {
+  font-size: 0.98rem;
+  margin-bottom: 0.4rem;
+}
+
+.service-card p {
+  font-size: 0.86rem;
+  color: var(--text-soft);
+  margin-bottom: 0.5rem;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  background: rgba(22, 163, 74, 0.12);
+  color: #bbf7d0;
+}
+
+/* CTA */
+
+.cta {
+  padding-bottom: 3.2rem;
+}
+
+.cta-inner {
+  border-radius: 1.4rem;
+  padding: 1.4rem 1.6rem;
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.15), transparent 60%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Rodapé */
+
+.footer {
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+  padding: 1.3rem 0 1.8rem;
+  background: radial-gradient(circle at top, #020617 0, #020617 55%, #000 100%);
+}
+
+html[data-theme="light"] .footer {
+  background: #e5e7eb;
+  border-top-color: rgba(15, 23, 42, 0.08);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  font-size: 0.83rem;
+}
+
+.footer-note {
+  color: var(--text-soft);
+  margin-top: 0.35rem;
+  max-width: 420px;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.footer-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.82rem;
+}
+
+/* ============================
+   PÁGINA DE PREÇOS
+============================ */
+
+.pricing-hero {
+  padding-top: 2.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.pricing-card {
+  border-radius: 1.1rem;
+  padding: 1.2rem 1.3rem 1.1rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: radial-gradient(circle at top, #020617 0, #020617 60%, #000 100%);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.9);
+}
+
+.pricing-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+
+.price-value {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0.4rem 0;
+}
+
+.price-obs {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+}
+
+.pricing-list {
+  margin-top: 0.7rem;
+  list-style: none;
+  font-size: 0.87rem;
+  color: var(--text-soft);
+}
+
+.pricing-list li::before {
+  content: "• ";
+}
+
+/* ============================
+   PÁGINA ADMIN (FAKE)
+============================ */
+
+.admin-main {
+  padding: 2.5rem 0 3rem;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 1.4rem;
+}
+
+.admin-card {
+  border-radius: 1.1rem;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: radial-gradient(circle at top, #020617 0, #020617 60%, #000 100%);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.9);
+}
+
+.admin-card h2,
+.admin-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+}
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.6rem;
+}
+
+.admin-stat {
+  border-radius: 0.85rem;
+  padding: 0.7rem 0.8rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  font-size: 0.8rem;
+}
+
+html[data-theme="light"] .admin-stat {
+  background: #f9fafb;
+}
+
+.admin-stat span {
+  display: block;
+}
+
+.admin-stat .label {
+  color: var(--text-soft);
+  margin-bottom: 0.25rem;
+}
+
+.admin-stat .value {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* Tabela simples */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin-top: 0.4rem;
+}
+
+.table th,
+.table td {
+  padding: 0.45rem 0.5rem;
+  border-bottom: 1px solid rgba(30, 41, 59, 0.7);
+}
+
+html[data-theme="light"] .table th,
+html[data-theme="light"] .table td {
+  border-bottom-color: rgba(209, 213, 219, 0.8);
+}
+
+.table th {
+  text-align: left;
+  font-weight: 500;
+  color: var(--text-soft);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.72rem;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+}
+
+/* Formulário login fake */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+.label {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+}
+
+.input {
+  width: 100%;
+  padding: 0.55rem 0.85rem;
+  border-radius: 0.8rem;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: rgba(15, 23, 42, 0.85);
+  color: var(--text);
+  font-size: 0.86rem;
+}
+
+html[data-theme="light"] .input {
+  background: #ffffff;
+}
+
+.input::placeholder {
+  color: rgba(148, 163, 184, 0.85);
+}
+
+/* ============================
+   RESPONSIVO
+============================ */
+
+@media (max-width: 900px) {
+  .hero {
+    padding-top: 2.4rem;
   }
+
+  /* Hero em uma coluna só no mobile */
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.8rem;
+  }
+
+  .hero-card {
+    order: 2;
+    width: 100%;
+  }
+
+  .steps-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar-inner {
+    height: auto;
+    padding: 0.4rem 0;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .services-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pricing-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-card {
+    margin-top: 0.5rem;
+  }
+
+  .cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+  }
+}
