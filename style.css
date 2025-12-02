@@ -1,932 +1,202 @@
-/* ============================
-   RESET / BASE
-============================ */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* ============================
-   VARIÁVEIS (LIGHT)
-============================ */
-:root {
-  --bg-body: #f3f4ff;
-  --bg-section: #ffffff;
-  --bg-section-alt: #eef2ff;
-  --bg-header: rgba(15,23,42,0.97);
-  --bg-footer: #020617;
-
-  --text-main: #020617;
-  --text-sub: #4b5563;
-  --text-muted: #6b7280;
-
-  --primary: #2563eb;
-  --primary-soft: #e0ebff;
-  --accent: #22c55e;
-
-  --border-soft: #e2e8ff;
-  --shadow-soft: 0 14px 40px rgba(15,23,42,0.12);
-}
-
-/* ============================
-   DARK MODE
-============================ */
-body.dark {
-  --bg-body: #020617;
-  --bg-section: #020617;
-  --bg-section-alt: #020617;
-  --bg-header: rgba(15,23,42,0.98);
-  --bg-footer: #020617;
-
-  --text-main: #e5e7eb;
-  --text-sub: #9ca3af;
-  --text-muted: #6b7280;
-
-  --primary: #60a5fa;
-  --primary-soft: #0b1120;
-  --accent: #22c55e;
-
-  --border-soft: #1e293b;
-  --shadow-soft: 0 14px 40px rgba(0,0,0,0.8);
-}
-
-/* ============================
-   BODY / LAYOUT
-============================ */
-body {
-  background: radial-gradient(circle at top, #dbeafe 0, var(--bg-body) 45%, var(--bg-body) 100%);
-  color: var(--text-main);
-  line-height: 1.6;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: siteFadeIn 0.5s ease-out forwards;
-}
-
-main {
-  min-height: 70vh;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 32px 20px;
-}
-
-/* ============================
-   HEADER / NAV
-============================ */
-header {
-  background: var(--bg-header);
-  color: #fff;
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  box-shadow: 0 3px 18px rgba(0,0,0,0.5);
-}
-
-.top-bar {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  justify-content: space-between;
-}
-
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.logo img {
-  height: 40px;
-}
-
-.logo-text-title {
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.logo-text-sub {
-  font-size: 0.78rem;
-  opacity: 0.75;
-}
-
-/* NAV LINKS */
-.nav-inner {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.nav-inner a {
-  font-size: 0.86rem;
-  padding: 6px 10px;
-  border-radius: 999px;
-  color: #e5e7eb;
-  transition: 0.2s;
-}
-
-.nav-inner a:hover,
-.nav-inner a.active {
-  background: rgba(248,250,252,0.16);
-}
-
-/* TOP RIGHT */
-.top-right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.top-contact {
-  font-size: 0.8rem;
-  text-align: right;
-}
-
-.top-contact a {
-  color: #bbf7d0;
-  font-weight: 600;
-}
-
-/* DARK MODE TOGGLE */
-.theme-toggle {
-  width: 40px;
-  height: 22px;
-  border-radius: 999px;
-  border: 1px solid rgba(148,163,184,0.8);
-  background: #020617;
-  display: flex;
-  align-items: center;
-  padding: 2px;
-  cursor: pointer;
-  position: relative;
-}
-
-.theme-toggle-knob {
-  width: 16px;
-  height: 16px;
-  border-radius: 999px;
-  background: #e5e7eb;
-  transform: translateX(0);
-  transition: 0.2s;
-  font-size: 0.7rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-body.dark .theme-toggle {
-  background: #111827;
-}
-
-body.dark .theme-toggle-knob {
-  transform: translateX(16px);
-}
-
-/* ============================
-   HERO
-============================ */
-.hero {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 38px 20px 10px;
-  display: grid;
-  grid-template-columns: 1.5fr 1.1fr;
-  gap: 26px;
-  align-items: center;
-}
-
-.hero-left h1 {
-  font-size: 2.3rem;
-  margin-bottom: 10px;
-  color: var(--text-main);
-}
-
-.hero-left h1 span {
-  color: var(--primary);
-}
-
-.hero-left p {
-  font-size: 0.95rem;
-  color: var(--text-sub);
-  margin-bottom: 18px;
-}
-
-.hero-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--primary-soft);
-  color: var(--primary);
-  font-size: 0.76rem;
-  padding: 5px 10px;
-  border-radius: 999px;
-  margin-bottom: 8px;
-}
-
-.hero-pill span {
-  font-size: 0.7rem;
-  opacity: 0.8;
-}
-
-.hero-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 18px;
-}
-
-.badge {
-  background: #e5edff;
-  color: #1d4ed8;
-  padding: 5px 10px;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  border: 1px solid #cbd5ff;
-}
-
-body.dark .badge {
-  background: #0b1120;
-  border-color: #1e293b;
-  color: #93c5fd;
-}
-
-/* HERO BUTTONS */
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
-  color: #f9fafb;
-  padding: 9px 18px;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  box-shadow: 0 6px 18px rgba(37,99,235,0.38);
-  transition: 0.18s;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 26px rgba(37,99,235,0.5);
-}
-
-.btn-outline {
-  background: transparent;
-  border: 1px solid #cbd5ff;
-  color: #1d4ed8;
-  padding: 9px 16px;
-  border-radius: 999px;
-  font-size: 0.88rem;
-}
-
-.btn-outline:hover {
-  background: #1d4ed8;
-  color: #f9fafb;
-}
-
-.hero-small {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-/* HERO RIGHT (CHAT CARD) */
-.hero-right {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.hero-card {
-  background: var(--bg-section);
-  border-radius: 18px;
-  padding: 14px 14px 12px;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid var(--border-soft);
-  min-width: 260px;
-}
-
-.hero-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-}
-
-.online-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 999px;
-  background: #22c55e;
-  display: inline-block;
-  margin-right: 4px;
-}
-
-.hero-card-tag {
-  background: #e0f2fe;
-  color: #0369a1;
-  padding: 3px 8px;
-  border-radius: 999px;
-  font-size: 0.68rem;
-}
-
-body.dark .hero-card-tag {
-  background: #0b1120;
-  color: #7dd3fc;
-}
-
-/* CHAT BUBBLES */
-.chat-bubbles {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin: 8px 0;
-}
-
-.bubble {
-  display: flex;
-  gap: 6px;
-  align-items: flex-start;
-  transition: 0.25s;
-}
-
-.bubble-avatar {
-  font-size: 1.2rem;
-  flex-shrink: 0;
-}
-
-.bubble-text {
-  padding: 7px 10px;
-  border-radius: 14px;
-  font-size: 0.8rem;
-  max-width: 85%;
-  line-height: 1.35;
-}
-
-.bubble-user .bubble-text {
-  background: #e5edff;
-  color: #111827;
-}
-
-.bubble-atend .bubble-text {
-  background: #1d4ed8;
-  color: #f9fafb;
-  margin-left: auto;
-}
-
-body.dark .bubble-user .bubble-text {
-  background: #020617;
-  border: 1px solid #1e293b;
-  color: #e5e7eb;
-}
-
-body.dark .bubble-atend .bubble-text {
-  background: #1d4ed8;
-}
-
-.bubble-typing {
-  font-size: 0.75rem;
-  opacity: 0.85;
-  font-style: italic;
-}
-
-.hero-card-footer {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  text-align: center;
-  margin-top: 6px;
-}
-
-/* ============================
-   SEÇÕES GENÉRICAS
-============================ */
-.section {
-  padding: 40px 20px 30px;
-}
-
-.section-alt {
-  background: var(--bg-section-alt);
-}
-
-.section .container {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.section-title {
-  font-size: 1.7rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-  color: var(--text-main);
-}
-
-.section-subtitle {
-  font-size: 0.92rem;
-  color: var(--text-sub);
-  margin-bottom: 20px;
-}
-
-/* CARDS DE SERVIÇO */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
-}
-
-.card {
-  background: var(--bg-section);
-  border-radius: 16px;
-  padding: 16px;
-  border: 1px solid var(--border-soft);
-  box-shadow: 0 10px 24px rgba(15,23,42,0.06);
-  transition: 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 36px rgba(15,23,42,0.14);
-}
-
-.card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 8px;
-}
-
-.card-list {
-  list-style: none;
-  font-size: 0.86rem;
-  color: var(--text-sub);
-  margin: 6px 0 8px;
-}
-
-.card-list li {
-  margin-bottom: 4px;
-}
-
-.card-foot {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-}
-
-/* CTA centro */
-.section-cta {
-  text-align: center;
-  margin-top: 24px;
-}
-
-/* ============================
-   PASSO A PASSO
-============================ */
-.steps {
-  list-style: none;
-  counter-reset: step;
-}
-
-.steps li {
-  margin-bottom: 10px;
-  padding: 10px 12px;
-  border-radius: 14px;
-  background: var(--bg-section);
-  border: 1px solid var(--border-soft);
-  box-shadow: 0 8px 18px rgba(15,23,42,0.05);
-  font-size: 0.9rem;
-  color: var(--text-sub);
-}
-
-.steps li::before {
-  counter-increment: step;
-  content: counter(step) ". ";
-  font-weight: 700;
-  color: var(--primary);
-}
-
-/* ============================
-   DEPOIMENTOS
-============================ */
-.depoimento-box {
-  background: var(--bg-section);
-  border-radius: 18px;
-  padding: 20px;
-  max-width: 500px;
-  margin: 0 auto;
-  text-align: center;
-  box-shadow: 0 10px 24px rgba(15,23,42,0.08);
-  border: 1px solid var(--border-soft);
-  opacity: 0;
-  transform: translateY(10px);
-  transition: 0.4s ease;
-}
-
-.depo-avatar {
-  font-size: 2.3rem;
-  margin-bottom: 6px;
-}
-
-.depo-nome {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.depo-cidade {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-bottom: 4px;
-}
-
-.depo-estrelas {
-  font-size: 1.1rem;
-  color: #facc15;
-  margin-bottom: 8px;
-}
-
-.depo-texto {
-  font-size: 0.9rem;
-  color: var(--text-sub);
-  font-style: italic;
-}
-
-/* ============================
-   FAQ
-============================ */
-.faq-item {
-  background: var(--bg-section);
-  border-radius: 16px;
-  padding: 12px 14px;
-  border: 1px solid var(--border-soft);
-  box-shadow: 0 8px 18px rgba(15,23,42,0.06);
-  margin-bottom: 10px;
-}
-
-.faq-item strong {
-  display: block;
-  margin-bottom: 4px;
-  font-size: 0.95rem;
-  color: var(--text-main);
-}
-
-.faq-item span {
-  font-size: 0.86rem;
-  color: var(--text-sub);
-}
-
-/* ============================
-   CONTATO / FORM / GRID
-============================ */
-.contact-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: 18px;
-}
-
-.contact-box {
-  background: linear-gradient(135deg, #1d4ed8, #22c55e);
-  border-radius: 16px;
-  padding: 18px;
-  color: #ecfeff;
-  box-shadow: 0 18px 40px rgba(15,23,42,0.4);
-}
-
-.contact-info p {
-  font-size: 0.9rem;
-  margin-bottom: 8px;
-}
-
-.contact-info a {
-  color: #bbf7d0;
-  font-weight: 600;
-}
-
-.contact-whats {
-  margin-top: 10px;
-}
-
-/* FORM */
-form {
-  background: var(--bg-section);
-  border-radius: 16px;
-  padding: 16px;
-  border: 1px solid var(--border-soft);
-  box-shadow: 0 10px 24px rgba(15,23,42,0.08);
-}
-
-form .field {
-  margin-bottom: 10px;
-}
-
-form label {
-  display: block;
-  font-size: 0.85rem;
-  margin-bottom: 4px;
-  color: var(--text-main);
-}
-
-form input,
-form textarea {
-  width: 100%;
-  padding: 8px 10px;
-  font-size: 0.9rem;
-  border-radius: 8px;
-  border: 1px solid #cbd5f5;
-  background: #f9fafb;
-}
-
-body.dark form input,
-body.dark form textarea {
-  background: #020617;
-  border-color: #1e293b;
-  color: #e5e7eb;
-}
-
-form textarea {
-  min-height: 90px;
-  resize: vertical;
-}
-
-.form-note {
-  font-size: 0.76rem;
-  margin-top: 6px;
-  color: var(--text-muted);
-}
-
-/* ============================
-   BOTÃO WHATSAPP FIXO
-============================ */
-.whats-float {
-  position: fixed;
-  right: 16px;
-  bottom: 18px;
-  width: 50px;
-  height: 50px;
-  border-radius: 999px;
-  background: #22c55e;
-  color: #f9fafb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  box-shadow: 0 12px 26px rgba(22,163,74,0.6);
-  z-index: 45;
-  transition: 0.2s;
-}
-
-.whats-float:hover {
-  transform: translateY(-2px) scale(1.03);
-}
-
-/* ============================
-   FOOTER
-============================ */
-footer {
-  background: var(--bg-footer);
-  color: #9ca3af;
-  text-align: center;
-  padding: 16px;
-  font-size: 0.78rem;
-}
-
-/* ============================
-   PÁGINA DE PREÇOS
-============================ */
-.pricing-hero {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
-}
-
-.plan {
-  background: var(--bg-section);
-  border-radius: 18px;
-  padding: 18px;
-  border: 1px solid var(--border-soft);
-  box-shadow: 0 12px 28px rgba(15,23,42,0.08);
-  text-align: left;
-}
-
-.plan-label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text-muted);
-  margin-bottom: 2px;
-}
-
-.plan-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.plan-price {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.plan-note {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  margin-bottom: 10px;
-}
-
-.plan ul {
-  list-style: none;
-  font-size: 0.86rem;
-  margin-bottom: 10px;
-  color: var(--text-sub);
-}
-
-.plan ul li {
-  margin-bottom: 4px;
-}
-
-/* ============================
-   PAINEL ADMIN FAKE
-============================ */
-.admin-wrapper {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 0 20px 30px;
-}
-
-.admin-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 18px;
-}
-
-.admin-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-}
-
-.admin-sub {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-.admin-badges {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.admin-badge {
-  background: var(--primary-soft);
-  color: var(--primary);
-  font-size: 0.78rem;
-  border-radius: 999px;
-  padding: 4px 8px;
-}
-
-/* CARDS ADMIN */
-.admin-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 14px;
-  margin-bottom: 18px;
-}
-
-.admin-card {
-  background: var(--bg-section);
-  border-radius: 14px;
-  padding: 12px;
-  border: 1px solid var(--border-soft);
-  box-shadow: 0 8px 18px rgba(15,23,42,0.08);
-  font-size: 0.85rem;
-}
-
-.admin-card h4 {
-  font-size: 0.9rem;
-  margin-bottom: 4px;
-}
-
-.admin-value {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 2px;
-}
-
-.admin-chip {
-  display: inline-block;
-  padding: 2px 6px;
-  border-radius: 999px;
-  font-size: 0.7rem;
-  margin-top: 4px;
-}
-
-/* TABELA FAKE */
-.admin-table {
-  background: var(--bg-section);
-  border-radius: 14px;
-  padding: 12px;
-  border: 1px solid var(--border-soft);
-  box-shadow: 0 8px 18px rgba(15,23,42,0.08);
-  font-size: 0.8rem;
-}
-
-.admin-table-header,
-.admin-table-row {
-  display: grid;
-  grid-template-columns: 2fr 1.5fr 1.5fr 1fr;
-  gap: 6px;
-  padding: 6px 0;
-}
-
-.admin-table-header {
-  font-weight: 600;
-  border-bottom: 1px solid var(--border-soft);
-  margin-bottom: 4px;
-}
-
-.admin-table-row:nth-child(odd) {
-  background: rgba(148,163,184,0.08);
-}
-
-/* ============================
-   ANIMAÇÕES
-============================ */
-@keyframes siteFadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ============================
-   RESPONSIVO
-============================ */
-@media (max-width: 960px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
-  .hero-right {
-    justify-content: flex-start;
-  }
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 780px) {
-  .top-bar {
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .nav-inner {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 520px) {
-  .hero-left h1 {
-    font-size: 1.85rem;
-  }
-  .top-bar {
-    padding-inline: 12px;
-  }
-  .container {
-    padding-inline: 14px;
-  }
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>CNH Facilitada DF - Em até 7 dias</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="CNH Facilitada DF - Primeira habilitação, renovação, troca de categoria e outros serviços veiculares com atendimento online e prático." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="logo">
+        <span class="logo-mark">CNH</span>
+        <div class="logo-text">
+          <span>CNH Facilitada</span>
+          <small>DF &amp; Entorno</small>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link active">Início</a>
+        <a href="precos.html" class="nav-link">Preços</a>
+        <a href="https://wa.me/5561998721896?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20CNH%20Facilitada." target="_blank" class="nav-link">WhatsApp</a>
+        <a href="admin.html" class="nav-link">Área do Cliente</a>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+        🌙
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <span class="badge">CNH em até 7 dias* • Atendimento 100% online</span>
+          <h1>CNH Facilitada DF com acompanhamento do início ao fim.</h1>
+          <p>
+            Cuidamos de toda a parte burocrática para você: primeira habilitação,
+            renovação, adição de categoria e regularizações. Sem perder tempo em fila,
+            tudo acompanhado pelo WhatsApp.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://wa.me/5561998721896?text=Ol%C3%A1%2C%20quero%20fazer%20minha%20CNH%20Facilitada." target="_blank" class="btn btn-primary">
+              Chamar no WhatsApp
+            </a>
+            <a href="precos.html" class="btn btn-ghost">
+              Ver tabela de preços
+            </a>
+          </div>
+
+          <p class="hero-note">
+            *Conforme análise de cada caso, região e disponibilidade de vagas.
+          </p>
+        </div>
+
+        <div class="hero-card">
+          <h2>Principais serviços</h2>
+          <ul class="hero-list">
+            <li>📄 Primeira habilitação categoria A, B ou AB</li>
+            <li>♻️ Troca e adição de categoria</li>
+            <li>⏱️ Renovação rápida da CNH</li>
+            <li>✅ Regularização e desbloqueio de CNH</li>
+            <li>🚗 Serviços veiculares (CRLV, transferência, etc.)</li>
+          </ul>
+          <div class="hero-card-footer">
+            <span>Em caso de dúvidas acesse:</span>
+            <a href="https://cnhgovt.shop/" target="_blank">cnhgovt.shop</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps">
+      <div class="container">
+        <h2>Como funciona a CNH Facilitada</h2>
+        <p class="section-subtitle">
+          Em poucos passos você já inicia seu processo sem complicação.
+        </p>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-number">01</span>
+            <h3>Contato pelo WhatsApp</h3>
+            <p>Você envia seus dados básicos e explica sua necessidade (primeira CNH, renovação, etc.).</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">02</span>
+            <h3>Análise e condições</h3>
+            <p>Realizamos a análise, explicamos valores, prazos e enviamos o passo a passo completo.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">03</span>
+            <h3>Processo em andamento</h3>
+            <p>Acompanhamos seu processo e te atualizamos até a emissão da CNH digital e física.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="container">
+        <h2>Outros serviços veiculares</h2>
+        <p class="section-subtitle">
+          Além da CNH, também ajudamos com documentação de veículos.
+        </p>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Emissão CRLV 2025</h3>
+            <p>Emissão do documento digital atualizado.</p>
+            <span class="pill">a partir de R$ 50,00</span>
+          </article>
+
+          <article class="service-card">
+            <h3>CRLV com débitos</h3>
+            <p>Orientação para regularização e emissão mesmo com débitos em aberto.</p>
+            <span class="pill">taxa de serviço R$ 25,00</span>
+          </article>
+
+          <article class="service-card">
+            <h3>Transferência de veículo</h3>
+            <p>Transferência DF &lt;&gt; GO sem necessidade de assinatura em cartório.</p>
+            <span class="pill">taxa de serviço R$ 200,00</span>
+          </article>
+
+          <article class="service-card">
+            <h3>Média monta / arrendamento</h3>
+            <p>Auxílio na baixa de restrições e regularização junto aos órgãos competentes.</p>
+            <span class="pill">a partir de R$ 250,00</span>
+          </article>
+        </div>
+
+        <div class="services-footer">
+          <a href="precos.html" class="btn btn-outline">Ver lista completa de serviços</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <div>
+          <h2>Fale agora com um atendente pelo WhatsApp</h2>
+          <p>Atendimento humanizado, direto no seu celular. Tire dúvidas antes de fechar.</p>
+        </div>
+        <a href="https://wa.me/5561998721896?text=Vim%20do%20site%20e%20quero%20saber%20sobre%20CNH%20Facilitada." target="_blank" class="btn btn-primary">
+          Chamar no WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p>&copy; <span id="year"></span> CNH Facilitada DF. Todos os direitos reservados.</p>
+        <p class="footer-note">
+          Não somos Detran nem órgão oficial. Atuação como consultoria e assessoria em
+          processos de CNH e serviços veiculares.
+        </p>
+      </div>
+      <div class="footer-right">
+        <a href="https://cnhgovt.shop/" target="_blank" class="footer-link">Site oficial</a>
+        <a href="https://wa.me/5561998721896" target="_blank" class="footer-link">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Tema (dark / light)
+    (function() {
+      const storedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', storedTheme);
+
+      const btn = document.getElementById('themeToggle');
+      const updateIcon = () => {
+        const theme = document.documentElement.getAttribute('data-theme');
+        if (btn) btn.textContent = theme === 'light' ? '☀️' : '🌙';
+      };
+      updateIcon();
+
+      if (btn) {
+        btn.addEventListener('click', () => {
+          const current = document.documentElement.getAttribute('data-theme');
+          const next = current === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+          updateIcon();
+        });
+      }
+    })();
+
+    // Ano automático no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
