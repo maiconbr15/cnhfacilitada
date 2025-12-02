@@ -1,440 +1,546 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>cnhgovt.shop - CNH & Serviços Veiculares Facilitados</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CNH facilitada, serviços de despachante, transferências, documentação, multas e IPVA. Atendimento online em todo o Brasil via WhatsApp.">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="img/logo.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CNH Facilitada - Auto Escola</title>
+  <meta name="description" content="CNH facilitada em até 7 dias, categoria AB, renovação e troca de categoria. Atendimento rápido e sem burocracia. Fale agora pelo WhatsApp!">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #f4f6fb;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1f4cff, #00b0ff);
+      color: #fff;
+      padding: 16px 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .top-bar {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .top-contact {
+      font-size: 0.9rem;
+      text-align: right;
+    }
+
+    .top-contact span {
+      display: block;
+    }
+
+    .top-contact a {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 20px;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+      gap: 30px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2.1rem;
+      margin-bottom: 12px;
+      color: #111;
+    }
+
+    .hero-text h1 span {
+      color: #1f4cff;
+    }
+
+    .hero-text p {
+      margin-bottom: 16px;
+      color: #444;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .badge {
+      background-color: #e8f0ff;
+      color: #1f4cff;
+      font-size: 0.8rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid #c8d7ff;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .btn-primary {
+      background-color: #1f4cff;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: #1f4cff;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid #1f4cff;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .hero-small {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .hero-box {
+      background-color: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    .hero-box h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .price-highlight {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .price-highlight strong {
+      font-size: 1.4rem;
+      color: #1f4cff;
+    }
+
+    .hero-box ul {
+      list-style: none;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .hero-box ul li {
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+
+    .hero-box ul li::before {
+      content: "✔ ";
+      color: #12b886;
+      font-weight: bold;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    .section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+      color: #111;
+    }
+
+    .section p.section-subtitle {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 18px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      border: 1px solid #e3e7f1;
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: #111;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .card strong {
+      color: #1f4cff;
+    }
+
+    .steps {
+      list-style: none;
+      counter-reset: step-counter;
+      padding-left: 0;
+    }
+
+    .steps li {
+      margin-bottom: 10px;
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 10px 12px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.04);
+      border: 1px solid #e3e7f1;
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    .steps li::before {
+      counter-increment: step-counter;
+      content: counter(step-counter) ". ";
+      font-weight: 700;
+      color: #1f4cff;
+    }
+
+    .faq-item {
+      margin-bottom: 10px;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 12px 14px;
+      border: 1px solid #e3e7f1;
+    }
+
+    .faq-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #111;
+    }
+
+    .contact-box {
+      background: #1f4cff;
+      color: #fff;
+      border-radius: 18px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.2fr);
+      gap: 20px;
+      align-items: center;
+    }
+
+    .contact-box h2 {
+      color: #fff;
+    }
+
+    .contact-info p {
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .contact-info a {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .contact-whats {
+      text-align: center;
+    }
+
+    .contact-whats .btn-primary {
+      background-color: #25d366;
+      color: #fff;
+      font-size: 1rem;
+      padding: 12px 18px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    .contact-whats span {
+      font-size: 0.85rem;
+      display: block;
+      opacity: 0.9;
+    }
+
+    footer {
+      padding: 14px 20px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #777;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 24px;
+      }
+
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        position: static;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header id="topo">
-  <div class="top-bar">
-    <div class="logo">
-      <img src="img/logo.png" alt="Logo cnhgovt.shop">
-      <div class="logo-text">
-        cnhgovt.shop
-        <span>CNH & Serviços Veiculares Facilitados</span>
+  <!-- TOPO -->
+  <header>
+    <div class="top-bar">
+      <div class="logo">
+        CNH Facilitada<br>
+        <span style="font-size:0.8rem;font-weight:400;">Auto Escola &amp; Consultoria</span>
+      </div>
+      <div class="top-contact">
+        <span>Atendimento rápido pelo WhatsApp</span>
+        <span><a href="https://wa.me/5561998721896" target="_blank">(61) 99872-1896</a></span>
       </div>
     </div>
-    <nav class="nav-inner">
-      <a href="#inicio" class="active">Início</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#depoimentos">Depoimentos</a>
-      <a href="#duvidas">Dúvidas</a>
-      <a href="#contato">Contato</a>
-    </nav>
-    <div class="top-contact">
-      <span>Atendimento online</span><br>
-      <a href="https://wa.me/5561998721896" target="_blank">(61) 99872-1896</a>
-    </div>
-  </div>
-</header>
+  </header>
 
-<main>
-
-  <!-- HERO / INÍCIO -->
-  <section id="inicio" class="hero hero-bg">
-    <div class="hero-left">
-      <div class="hero-pill">Atendimento em todo o Brasil 🇧🇷</div>
-      <h1>CNH & Documentos veiculares <span>sem dor de cabeça</span></h1>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Sua <span>CNH Facilitada</span> sem dor de cabeça</h1>
       <p>
-        Tirar, renovar ou regularizar sua CNH e documentação do veículo não precisa ser complicado.
-        Organizo tudo pra você, explicando cada etapa de forma simples e direta.
+        Atendemos quem precisa tirar a primeira habilitação, renovar, ou trocar de categoria
+        com praticidade, explicação passo a passo e suporte no WhatsApp.
       </p>
-
       <div class="hero-badges">
-        <div class="badge">Primeira habilitação</div>
-        <div class="badge">Transferência & CRLV</div>
-        <div class="badge">Multas & Pontos</div>
+        <div class="badge">CNH Categoria AB</div>
+        <div class="badge">Processo facilitado</div>
+        <div class="badge">Atendimento humanizado</div>
       </div>
-
       <div class="hero-buttons">
-        <a class="btn-primary" target="_blank"
-           href="https://wa.me/5561998721896?text=Ol%C3%A1%2C%20vim%20do%20site%20cnhgovt.shop%20e%20quero%20ajuda%20com%20meu%20caso.">
-          💬 Falar no WhatsApp agora
+        <a href="https://wa.me/5561998721896?text=Ol%C3%A1%2C%20quero%20saber%20sobre%20a%20CNH%20facilitada." class="btn-primary" target="_blank">
+          Falar no WhatsApp
         </a>
-        <a class="btn-outline" href="#servicos">
-          Ver todos os serviços
-        </a>
+        <a href="#planos" class="btn-outline">Ver valores e planos</a>
       </div>
-
       <p class="hero-small">
-        Resposta rápida, atendimento humanizado e explicação clara.  
-        Sem enrolação, sem linguagem complicada.
+        Tire suas dúvidas sem compromisso. Explicamos tudo sobre documentos, etapas
+        e prazos para você se organizar da melhor forma.
       </p>
     </div>
 
-    <div class="hero-right">
-      <div class="hero-card">
-        <div class="hero-card-header">
-          <div>
-            <span class="online-dot"></span> Atendimento agora
-          </div>
-          <span class="hero-card-tag">Consultoria facilitada</span>
-        </div>
-
-        <div class="chat-bubbles">
-          <div class="bubble bubble-user" id="bubble-pergunta">
-            <div class="bubble-avatar">🙂</div>
-            <div class="bubble-text"></div>
-          </div>
-          <div class="bubble bubble-atend" id="bubble-resposta">
-            <div class="bubble-avatar">👨‍💼</div>
-            <div class="bubble-text"></div>
-          </div>
-        </div>
-
-        <div class="hero-card-footer">
-          <span>Atendo DF, Entorno e todo o Brasil pela internet.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVIÇOS -->
-  <section id="servicos" class="section">
-    <div class="container">
-      <h2 class="section-title">Serviços que posso resolver pra você</h2>
-      <p class="section-subtitle">
-        Do primeiro passo da CNH até documentação atrasada, organizo tudo e te mostro o caminho certo.
+    <div class="hero-box">
+      <h2>Oferta especial CNH AB</h2>
+      <p class="price-highlight">
+        A partir de <strong>R$ 1.100,00</strong> na categoria AB
       </p>
-
-      <div class="cards">
-
-        <div class="card">
-          <h3>CNH Facilitada</h3>
-          <ul class="card-list">
-            <li>Primeira habilitação (AB)</li>
-            <li>Renovação da CNH</li>
-            <li>Troca de categoria</li>
-            <li>Ajuda com CNH digital</li>
-          </ul>
-          <p class="card-foot">Explico o passo a passo completo, sem termos complicados.</p>
-        </div>
-
-        <div class="card">
-          <h3>Serviços de Despachante</h3>
-          <ul class="card-list">
-            <li>Transferência de veículo</li>
-            <li>CRLV / licenciamento</li>
-            <li>Atualização de dados</li>
-            <li>Suporte em vistoria</li>
-          </ul>
-          <p class="card-foot">Tudo organizado: o que é taxa oficial e o que é serviço.</p>
-        </div>
-
-        <div class="card">
-          <h3>Multas, Pontos & IPVA</h3>
-          <ul class="card-list">
-            <li>Consulta de multas</li>
-            <li>Pontuação da CNH</li>
-            <li>Débitos de IPVA</li>
-            <li>Orientação para regularização</li>
-          </ul>
-          <p class="card-foot">Você entende exatamente o que está acontecendo no seu prontuário.</p>
-        </div>
-
-        <div class="card">
-          <h3>Casos Travados & Especiais</h3>
-          <ul class="card-list">
-            <li>Processos parados</li>
-            <li>Documentos antigos</li>
-            <li>Veículo com débito acumulado</li>
-            <li>Dúvidas específicas de DETRAN</li>
-          </ul>
-          <p class="card-foot">Análise individual do seu caso e melhor caminho pra resolver.</p>
-        </div>
-
-      </div>
-
-      <div class="section-cta">
-        <a class="btn-primary" target="_blank"
-           href="https://wa.me/5561998721896?text=Quero%20ajuda%20com%20um%20servi%C3%A7o%20veicular%20ou%20CNH.">
-          👉 Me contar seu caso pelo WhatsApp
-        </a>
-      </div>
+      <p style="font-size:0.9rem;">
+        Forma de pagamento:
+      </p>
+      <ul>
+        <li>Entrada de <strong>R$ 300,00</strong></li>
+        <li><strong>R$ 400,00</strong> na liberação da CNH digital</li>
+        <li><strong>R$ 400,00</strong> na retirada da CNH física</li>
+      </ul>
+      <p style="font-size:0.85rem;color:#555;margin-top:4px;">
+        Valores podem variar conforme regras do DETRAN e cidade de atendimento.
+        Confirme seu orçamento no WhatsApp.
+      </p>
     </div>
   </section>
 
   <!-- COMO FUNCIONA -->
-  <section id="como-funciona" class="section section-alt">
-    <div class="container">
-      <h2 class="section-title">Como funciona na prática</h2>
-      <p class="section-subtitle">
-        Tudo é explicado passo a passo. Você não fica perdido em nenhuma etapa.
-      </p>
+  <section class="section">
+    <h2>Como funciona a CNH facilitada?</h2>
+    <p class="section-subtitle">
+      A ideia é simplificar sua vida. Você recebe todas as orientações, já sai sabendo
+      o que precisa fazer e em qual etapa está o seu processo.
+    </p>
 
-      <ol class="steps">
-        <li>Você me chama no WhatsApp e explica rapidamente o que precisa (CNH, veículo, multa, documento atrasado...).</li>
-        <li>Faço algumas perguntas simples para entender a situação real e ver o que é possível fazer.</li>
-        <li>Peço apenas os dados e fotos necessárias para análise inicial, direto pelo WhatsApp.</li>
-        <li>Organizo um passo a passo claro: o que fazemos online, o que depende de você e quais taxas existem.</li>
-        <li>Se tiver parte presencial (DETRAN, prova, exame, vistoria), te preparo antes para não ter erro.</li>
-        <li>Você pode mandar prints e dúvidas durante o processo, até finalizar tudo que for possível.</li>
-      </ol>
-
-      <p class="section-subtitle small">
-        A ideia é simples: menos estresse, menos fila, menos confusão. Mais clareza e resultado.
-      </p>
-    </div>
-  </section>
-
-  <!-- DEPOIMENTOS -->
-  <section id="depoimentos" class="section">
-    <div class="container">
-      <h2 class="section-title">O que falam do atendimento</h2>
-      <p class="section-subtitle">
-        Pessoas do DF, Entorno e todo Goiás já confiaram e recomendaram o atendimento.
-      </p>
-
-      <div id="depoimento-box" class="depoimento-box">
-        <div class="depo-avatar">🙂</div>
-        <div class="depo-nome">Carregando...</div>
-        <div class="depo-cidade">...</div>
-        <div class="depo-estrelas">⭐⭐⭐⭐⭐</div>
-        <div class="depo-texto">...</div>
+    <div class="cards">
+      <div class="card">
+        <h3>1. Atendimento pelo WhatsApp</h3>
+        <p>Você chama, envia seus dados básicos, tiramos suas dúvidas e já fazemos uma pré-análise do seu caso.</p>
+      </div>
+      <div class="card">
+        <h3>2. Documentação</h3>
+        <p>Orientamos sobre RG, CPF, comprovante de residência, foto, e como organizar tudo para não ter dor de cabeça.</p>
+      </div>
+      <div class="card">
+        <h3>3. Processo no DETRAN</h3>
+        <p>Acompanhamos as etapas: cadastro, exames, aulas teóricas, aulas práticas e agendamentos.</p>
+      </div>
+      <div class="card">
+        <h3>4. Liberação digital e física</h3>
+        <p>Você recebe primeiro sua CNH digital e depois a CNH física, conforme liberação do órgão de trânsito.</p>
       </div>
     </div>
   </section>
 
-  <!-- DÚVIDAS -->
-  <section id="duvidas" class="section section-alt">
-    <div class="container">
-      <h2 class="section-title">Dúvidas comuns</h2>
+  <!-- PLANOS -->
+  <section class="section" id="planos">
+    <h2>Planos &amp; Valores</h2>
+    <p class="section-subtitle">
+      Trabalhamos com valores acessíveis e formas de pagamento pensadas para caber no seu bolso.
+    </p>
 
-      <div class="faq-item">
-        <strong>Vocês atendem só DF e Entorno?</strong>
-        <span>Não. O atendimento é online e posso orientar clientes de qualquer estado do Brasil.</span>
+    <div class="cards">
+      <div class="card">
+        <h3>Primeira Habilitação AB</h3>
+        <p><strong>R$ 1.100,00</strong> (valor base)</p>
+        <p style="font-size:0.85rem;margin-top:4px;">
+          Entrada: R$ 300,00<br>
+          + R$ 400,00 na CNH digital<br>
+          + R$ 400,00 na CNH física
+        </p>
+        <p style="font-size:0.85rem;margin-top:8px;">
+          Valores podem variar conforme exames, taxas e região.
+        </p>
       </div>
 
-      <div class="faq-item">
-        <strong>Vocês são DETRAN?</strong>
-        <span>Não. Eu atuo como consultoria/apoio para organizar o processo, explicar e te guiar dentro das regras oficiais.</span>
+      <div class="card">
+        <h3>Troca de categoria</h3>
+        <p>
+          <strong>Categoria A</strong>: a partir de R$ 200,00<br>
+          <strong>Categoria B</strong>: a partir de R$ 400,00<br>
+          <strong>Demais categorias</strong>: entre R$ 800,00 e R$ 1.000,00
+        </p>
+        <p style="font-size:0.85rem;margin-top:8px;">
+          Consulte as condições para C, D, E ou outras categorias específicas.
+        </p>
       </div>
 
-      <div class="faq-item">
-        <strong>Consigo resolver tudo pelo WhatsApp?</strong>
-        <span>Grande parte sim. Onde a lei exige presença (prova, exame, vistoria, cartório), você vai pessoalmente, mas já sabendo o que fazer.</span>
+      <div class="card">
+        <h3>Renovação de CNH</h3>
+        <p>
+          Auxiliamos em todo o processo de renovação, exames e atualização de dados.
+        </p>
+        <p style="font-size:0.85rem;margin-top:8px;">
+          Valor sob consulta, de acordo com sua CNH e prazos.
+        </p>
       </div>
+    </div>
+  </section>
 
-      <div class="faq-item">
-        <strong>Preciso mandar documento físico?</strong>
-        <span>Na análise inicial, não. Você manda fotos nítidas pelo WhatsApp. Documento físico só quando o órgão oficial exigir.</span>
-      </div>
+  <!-- PASSO A PASSO -->
+  <section class="section">
+    <h2>Passo a passo para ser habilitado</h2>
+    <p class="section-subtitle">
+      Veja o caminho até pegar sua CNH na mão. A gente te acompanha em cada etapa.
+    </p>
 
-      <div class="faq-item">
-        <strong>Como sei quanto vou pagar?</strong>
-        <span>Cada caso é diferente. Eu analiso sua situação e te falo o que é taxa oficial, o que é serviço e o que pode ser feito.</span>
-      </div>
+    <ul class="steps">
+      <li>Você entra em contato pelo WhatsApp e informa que quer CNH facilitada.</li>
+      <li>Enviamos a lista de documentos e o valor detalhado para o seu caso.</li>
+      <li>Combinamos a forma de pagamento (entrada + etapas).</li>
+      <li>Ajudamos com cadastro, exames médicos/psicotécnicos, e matrícula na autoescola.</li>
+      <li>Acompanhamos aulas teóricas, provas, aulas práticas e exame de direção.</li>
+      <li>Após aprovação, orientamos para instalação da CNH digital.</li>
+      <li>Por fim, você pega sua CNH física e finaliza o processo.</li>
+    </ul>
+  </section>
 
-      <div class="section-cta">
-        <a class="btn-outline" target="_blank"
-           href="https://wa.me/5561998721896?text=Tenho%20algumas%20d%C3%BAvidas%20sobre%20meu%20caso.">
-          Tirar dúvidas direto no WhatsApp
-        </a>
-      </div>
+  <!-- FAQ -->
+  <section class="section">
+    <h2>Dúvidas frequentes</h2>
+    <p class="section-subtitle">
+      Algumas respostas rápidas. Se ainda ficar com dúvida, chama no WhatsApp.
+    </p>
+
+    <div class="faq-item">
+      <strong>Demora quanto tempo para ter a CNH?</strong>
+      <span>O prazo depende da agenda de exames, aulas e provas do DETRAN. Em muitos casos o processo é bem rápido, mas sempre explicamos uma média de prazo para você.</span>
+    </div>
+
+    <div class="faq-item">
+      <strong>Preciso ter todos os valores na hora?</strong>
+      <span>Não. Trabalhamos com entrada e pagamentos divididos por etapa (digital e física), para ajudar no seu planejamento.</span>
+    </div>
+
+    <div class="faq-item">
+      <strong>Vocês tiram todas as dúvidas pelo WhatsApp?</strong>
+      <span>Sim. Explicamos tudo sobre documentos, taxas, agendamentos e etapas, de forma clara e objetivo.</span>
+    </div>
+
+    <div class="faq-item">
+      <strong>E se eu já tiver iniciado um processo?</strong>
+      <span>Também analisamos processos já abertos para ver se é possível ajustar, regularizar ou finalizar de forma mais tranquila.</span>
     </div>
   </section>
 
   <!-- CONTATO -->
-  <section id="contato" class="section">
-    <div class="container">
-      <h2 class="section-title">Fale comigo</h2>
-      <p class="section-subtitle">
-        Me chama no WhatsApp ou preenche os dados abaixo que eu te respondo por lá.
-      </p>
-
-      <div class="contact-grid">
-        <div class="contact-box">
-          <div class="contact-info">
-            <p><strong>WhatsApp direto:</strong><br>
-              <a href="https://wa.me/5561998721896" target="_blank">(61) 99872-1896</a>
-            </p>
-            <p><strong>Atendimento:</strong> Online, com horários flexíveis.</p>
-            <p><strong>Região:</strong> DF, Entorno e todo o Brasil 🇧🇷</p>
-          </div>
-          <div class="contact-whats">
-            <a class="btn-primary" target="_blank"
-               href="https://wa.me/5561998721896?text=Ol%C3%A1%2C%20quero%20ajuda%20com%20meu%20caso%20de%20CNH%20ou%20ve%C3%ADculo.">
-              💬 Abrir conversa no WhatsApp
-            </a>
-            <span>Resposta rápida e atendimento humanizado.</span>
-          </div>
-        </div>
-
-        <form id="contato-form">
-          <div class="field">
-            <label for="nome">Nome completo</label>
-            <input type="text" id="nome" placeholder="Seu nome" required>
-          </div>
-          <div class="field">
-            <label for="whats">Telefone / WhatsApp</label>
-            <input type="text" id="whats" placeholder="(DDD) 9XXXX-XXXX" required>
-          </div>
-          <div class="field">
-            <label for="assunto">Assunto</label>
-            <input type="text" id="assunto" placeholder="CNH, transferência, multa, documento atrasado...">
-          </div>
-          <div class="field">
-            <label for="mensagem">Explique sua situação</label>
-            <textarea id="mensagem" placeholder="Conte um pouco o que está acontecendo para eu poder te orientar melhor."></textarea>
-          </div>
-          <button type="submit" class="btn-primary">Enviar pelo WhatsApp</button>
-          <p class="form-note">Ao clicar, vamos montar a mensagem automaticamente e abrir o WhatsApp pra você enviar.</p>
-        </form>
+  <section class="section">
+    <div class="contact-box">
+      <div class="contact-info">
+        <h2>Fale agora com um atendente</h2>
+        <p>Chame no WhatsApp, tire todas as suas dúvidas e já saia com seu orçamento na mão.</p>
+        <p><strong>Telefone/WhatsApp:</strong> <a href="https://wa.me/5561998721896" target="_blank">(61) 99872-1896</a></p>
+        <p><strong>Atendimento:</strong> Segunda a sábado, horário a combinar.</p>
+        <p style="font-size:0.85rem;margin-top:4px;">
+          Ao chamar, informe que viu o site da CNH Facilitada para receber as condições atualizadas.
+        </p>
+      </div>
+      <div class="contact-whats">
+        <a class="btn-primary" href="https://wa.me/5561998721896?text=Ol%C3%A1%2C%20tenho%20interesse%20na%20CNH%20facilitada." target="_blank">
+          Quero falar no WhatsApp
+        </a>
+        <span>Resposta rápida e atendimento personalizado</span>
       </div>
     </div>
   </section>
 
-</main>
+  <footer>
+    © <span id="ano"></span> CNH Facilitada - Auto Escola &amp; Consultoria. Todos os direitos reservados.
+  </footer>
 
-<!-- BOTÃO WHATSAPP FIXO -->
-<a href="https://wa.me/5561998721896?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20preciso%20de%20ajuda."
-   class="whats-float" target="_blank">💬</a>
-
-<footer>
-  © <span id="ano"></span> cnhgovt.shop — CNH & Serviços Veiculares Facilitados.  
-  Atendimento em todo o Brasil 🇧🇷
-</footer>
-
-<!-- SOM NOTIFICAÇÃO CHAT -->
-<audio id="notify-sound" preload="auto">
-  <source src="sounds/notify.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-  // ano no rodapé
-  document.getElementById("ano").textContent = new Date().getFullYear();
-
-  /* CHAT ANIMADO */
-  const qaPairs = [
-    { q: "Vocês mexem só com CNH?", a: "Não. Trabalho com CNH, documentos de veículos, multas, IPVA e casos travados." },
-    { q: "Consigo resolver quase tudo pelo WhatsApp?", a: "Sim. Onde precisar presença (DETRAN, exame, vistoria), eu te preparo antes." },
-    { q: "Atende só DF e Entorno?", a: "Atendo DF, Entorno e qualquer estado do Brasil com atendimento online." },
-    { q: "Vocês são DETRAN?", a: "Não. Faço a parte de orientação, organização e acompanhamento do processo." },
-    { q: "Dá pra consultar multas e pontos?", a: "Faço consulta completa, explico cada item e mostro as opções que você tem." },
-    { q: "Documento atrasado resolve?", a: "Organizo seu caso, mostro débitos e o melhor passo a passo pra regularizar." }
-  ];
-
-  let qaIndex = 0;
-  let typingInterval = null;
-
-  function playNotification() {
-    const audio = document.getElementById("notify-sound");
-    if (!audio) return;
-    try {
-      audio.currentTime = 0;
-      audio.play().catch(() => {});
-    } catch (e) {}
-  }
-
-  function typeText(element, text, callback) {
-    if (typingInterval) clearInterval(typingInterval);
-    element.textContent = "“";
-    let i = 0;
-    typingInterval = setInterval(() => {
-      element.textContent = "“" + text.slice(0, i) + "”";
-      i++;
-      if (i > text.length) {
-        clearInterval(typingInterval);
-        if (callback) callback();
-      }
-    }, 35);
-  }
-
-  function animateBubble(el) {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(4px)";
-    setTimeout(() => {
-      el.style.opacity = "1";
-      el.style.transform = "translateY(0)";
-    }, 30);
-  }
-
-  function atualizarChat() {
-    const pBubble = document.getElementById("bubble-pergunta");
-    const rBubble = document.getElementById("bubble-resposta");
-
-    const pText = pBubble.querySelector(".bubble-text");
-    const rText = rBubble.querySelector(".bubble-text");
-
-    const pair = qaPairs[qaIndex];
-
-    pText.textContent = "“" + pair.q + "”";
-
-    animateBubble(pBubble);
-    animateBubble(rBubble);
-
-    rText.innerHTML = '<span class="bubble-typing">Digitando...</span>';
-
-    setTimeout(() => {
-      playNotification();
-      typeText(rText, pair.a);
-    }, 800);
-
-    qaIndex = (qaIndex + 1) % qaPairs.length;
-  }
-
-  atualizarChat();
-  setInterval(atualizarChat, 7000);
-
-  /* DEPOIMENTOS ROTATIVOS */
-  const depoimentos = [
-    { avatar: "🙂", nome: "Lucas Ferreira", cidade: "Taguatinga - DF", texto: "Renovei minha CNH com orientação dele. Explicação simples e direta, sem enrolação." },
-    { avatar: "😊", nome: "Maria Santos", cidade: "Águas Lindas - GO", texto: "Tava perdida com documento atrasado do carro. Hoje está tudo regularizado." },
-    { avatar: "😀", nome: "Rafael Almeida", cidade: "Ceilândia - DF", texto: "Consulta de pontos e multas completa. Agora sei exatamente minha situação." },
-    { avatar: "😄", nome: "Pedro Carvalho", cidade: "Luziânia - GO", texto: "Atendimento rápido pelo WhatsApp. Me ajudou a organizar IPVA e taxas pendentes." },
-    { avatar: "😁", nome: "Ana Paula", cidade: "Valparaíso - GO", texto: "Muito paciente pra explicar. Me senti segura em cada passo do processo." }
-  ];
-
-  let dIndex = 0;
-
-  function mostrarDepoimento() {
-    const box = document.getElementById("depoimento-box");
-
-    box.style.opacity = "0";
-    box.style.transform = "translateY(8px)";
-
-    setTimeout(() => {
-      const d = depoimentos[dIndex];
-      box.querySelector(".depo-avatar").textContent = d.avatar;
-      box.querySelector(".depo-nome").textContent = d.nome;
-      box.querySelector(".depo-cidade").textContent = d.cidade;
-      box.querySelector(".depo-texto").textContent = "“" + d.texto + "”";
-
-      box.style.opacity = "1";
-      box.style.transform = "translateY(0)";
-
-      dIndex = (dIndex + 1) % depoimentos.length;
-    }, 300);
-  }
-
-  mostrarDepoimento();
-  setInterval(mostrarDepoimento, 5000);
-
-  /* FORMULÁRIO → WHATSAPP */
-  document.getElementById("contato-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const nome = document.getElementById("nome").value.trim();
-    const whats = document.getElementById("whats").value.trim();
-    const assunto = document.getElementById("assunto").value.trim();
-    const msg = document.getElementById("mensagem").value.trim();
-
-    let texto = "Ol%C3%A1%2C%20vim%20do%20site%20cnhgovt.shop%20e%20quero%20ajuda%20com%20meu%20caso.%0A%0A";
-    if (nome) texto += "Nome%3A%20" + encodeURIComponent(nome) + "%0A";
-    if (whats) texto += "WhatsApp%3A%20" + encodeURIComponent(whats) + "%0A";
-    if (assunto) texto += "Assunto%3A%20" + encodeURIComponent(assunto) + "%0A";
-    if (msg) texto += "Mensagem%3A%20" + encodeURIComponent(msg) + "%0A";
-
-    const link = "https://wa.me/5561998721896?text=" + texto;
-    window.open(link, "_blank");
-  });
-</script>
-
+  <script>
+    // Atualiza o ano automaticamente
+    document.getElementById("ano").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
