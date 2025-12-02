@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Área do Cliente - CNH Facilitada DF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Painel simples para consulta e informações sobre processos da CNH Facilitada DF." />
+  <link rel="stylesheet" href="style.css?v=5" />
+</head>
+
+<body>
+  <!-- TOPO -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="logo">
+        <span class="logo-mark">CNH</span>
+        <div class="logo-text">
+          <span>CNH Facilitada</span>
+          <small>DF & Entorno</small>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="precos.html" class="nav-link">Preços</a>
+        <a href="admin.html" class="nav-link active">Área do Cliente</a>
+        <a href="https://wa.me/5561998721896" class="nav-link" target="_blank">WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <div class="container">
+
+      <h1 style="margin-bottom:0.8rem;">Área do Cliente</h1>
+      <p class="section-subtitle" style="margin-bottom: 2rem;">
+        Consulte informações básicas sobre seu processo.  
+        Para atualizações completas, fale com um atendente pelo WhatsApp.
+      </p>
+
+      <!-- FORM DE CONSULTA -->
+      <div class="admin-card" style="margin-bottom: 2rem;">
+        <h2>Consulta rápida</h2>
+        <p class="section-subtitle">Informe seus dados para visualizar informações do atendimento.</p>
+
+        <form class="form">
+          <label class="label">
+            CPF / CNPJ
+            <input type="text" class="input" placeholder="000.000.000-00" />
+          </label>
+
+          <label class="label">
+            Número do processo
+            <input type="text" class="input" placeholder="Ex: CNH-2025-001" />
+          </label>
+
+          <button type="button" class="btn btn-primary" style="margin-top: 0.5rem;">
+            Consultar (visual ilustrativo)
+          </button>
+        </form>
+      </div>
+
+      <!-- TABELA -->
+      <div class="admin-card">
+        <h2>Últimas atualizações</h2>
+        <p class="section-subtitle">Lista ilustrativa para demonstração.</p>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Serviço</th>
+              <th>Status</th>
+              <th>Última atualização</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Arthur C.</td>
+              <td>Primeira Habilitação AB</td>
+              <td><span class="tag">Em andamento</span></td>
+              <td>Hoje • 14:32</td>
+            </tr>
+
+            <tr>
+              <td>Laiane S.</td>
+              <td>Renovação CNH</td>
+              <td><span class="tag">Aguardando exame</span></td>
+              <td>Ontem • 18:05</td>
+            </tr>
+
+            <tr>
+              <td>Francisco N.</td>
+              <td>Transferência DF → GO</td>
+              <td><span class="tag">Documentos enviados</span></td>
+              <td>Há 2 dias</td>
+            </tr>
+
+            <tr>
+              <td>Cliente 048</td>
+              <td>Consulta veicular</td>
+              <td><span class="tag">Concluído</span></td>
+              <td>Há 3 dias</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="margin-top: 1.5rem;">
+          <a href="https://wa.me/5561998721896?text=Quero%20acompanhar%20meu%20processo" class="btn btn-outline" target="_blank">
+            Falar com atendente pelo WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        © <span id="year"></span> CNH Facilitada DF
+        <p class="footer-note">Consultoria independente. Não somos Detran.</p>
+      </div>
+
+      <div class="footer-right">
+        <a href="https://cnhgovt.shop" target="_blank" class="footer-link">Site Oficial</a>
+        <a href="https://wa.me/5561998721896" target="_blank" class="footer-link">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
