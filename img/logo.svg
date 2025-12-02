@@ -1,0 +1,18 @@
+<svg width="220" height="52" viewBox="0 0 220 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="220" y2="52" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#22C55E"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="6" width="48" height="40" rx="12" fill="url(#g1)"/>
+  <path d="M16 28C16 22.477 20.477 18 26 18H40" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M20 32H32" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M36 24H40" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+  <text x="62" y="26" fill="#0F172A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="700">
+    cnhgovt.shop
+  </text>
+  <text x="62" y="39" fill="#6B7280" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11">
+    CNH & Serviços Veiculares
+  </text>
+</svg>
