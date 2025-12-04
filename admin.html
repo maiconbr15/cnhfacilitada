@@ -9,7 +9,6 @@
 </head>
 
 <body>
-  <!-- TOPO -->
   <header class="topbar">
     <div class="container topbar-inner">
       <div class="logo">
@@ -38,7 +37,6 @@
         Para atualizações completas, fale com um atendente pelo WhatsApp.
       </p>
 
-      <!-- FORM DE CONSULTA -->
       <div class="admin-card" style="margin-bottom: 2rem;">
         <h2>Consulta rápida</h2>
         <p class="section-subtitle">Informe seus dados para visualizar informações do atendimento.</p>
@@ -46,7 +44,7 @@
         <form class="form">
           <label class="label">
             CPF / CNPJ
-            <input type="text" class="input" placeholder="000.000.000-00" />
+            <input type="text" class="input input-cpf" placeholder="000.000.000-00" />
           </label>
 
           <label class="label">
@@ -54,13 +52,12 @@
             <input type="text" class="input" placeholder="Ex: CNH-2025-001" />
           </label>
 
-          <button type="button" class="btn btn-primary" style="margin-top: 0.5rem;">
+          <button type="button" class="btn btn-primary" id="btn-consultar" style="margin-top: 0.5rem;">
             Consultar 
           </button>
         </form>
       </div>
 
-      <!-- TABELA -->
       <div class="admin-card">
         <h2>Últimas atualizações</h2>
         <p class="section-subtitle">Lista ilustrativa para demonstração.</p>
@@ -131,7 +128,33 @@
   </footer>
 
   <script>
+    // Atualiza o ano automaticamente
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Lógica do botão de consultar
+    const btn = document.getElementById('btn-consultar');
+    const input = document.querySelector('.input-cpf');
+
+    if(btn) {
+      btn.addEventListener('click', function() {
+        // Validação simples (se o campo está vazio)
+        if(!input.value || input.value.length < 3) {
+          alert("Por favor, digite um CPF ou número de processo válido.");
+        } else {
+          // Efeito de "carregando"
+          const originalText = btn.innerText;
+          btn.innerText = "Buscando...";
+          btn.style.opacity = "0.7";
+          
+          setTimeout(() => {
+            alert("⚠️ Status do Processo:\n\nEm análise no sistema.\nPara mais detalhes ou agilizar, chame nosso suporte no WhatsApp.");
+            // Volta o botão ao normal
+            btn.innerText = originalText;
+            btn.style.opacity = "1";
+          }, 1000); // Espera 1 segundo para mostrar o alerta
+        }
+      });
+    }
   </script>
 </body>
 </html>
