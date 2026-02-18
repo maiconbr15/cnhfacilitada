@@ -3,128 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Despachante Rápido - Soluções Veiculares</title>
+    <title>Despachante Ythalo - Documentação Veicular</title>
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Estilos Gerais */
-        :root { --primary: #004aad; --secondary: #002a62; --accent: #ffcc00; --light: #f4f4f4; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { line-height: 1.6; color: #333; }
-        a { text-decoration: none; color: inherit; }
+        /* --- ESTILOS GERAIS --- */
+        :root {
+            --primary: #0f172a;    /* Azul Escuro Profissional */
+            --secondary: #1e293b;  /* Cinza Azulado */
+            --accent: #d97706;     /* Dourado/Laranja para destaque */
+            --light: #f8fafc;
+            --white: #ffffff;
+        }
 
-        /* Cabeçalho */
-        header { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: var(--secondary); }
-        .logo i { color: var(--primary); }
-        nav ul { display: flex; list-style: none; gap: 20px; }
-        nav a:hover { color: var(--primary); }
-        .btn-login { background: #eee; padding: 8px 15px; border-radius: 5px; font-weight: bold; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        
+        body { background-color: var(--light); color: #333; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
 
-        /* Hero (Banner Principal) */
-        .hero { background: linear-gradient(rgba(0,42,98,0.8), rgba(0,42,98,0.8)), url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-size: cover; color: white; padding: 100px 5%; text-align: center; }
-        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .cta-button { background: var(--accent); color: var(--secondary); padding: 15px 30px; font-size: 1.2rem; border-radius: 50px; font-weight: bold; transition: 0.3s; display: inline-block; }
-        .cta-button:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4); }
+        /* --- CABEÇALHO --- */
+        header {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-        /* Serviços */
-        .services { padding: 80px 5%; background: var(--light); text-align: center; }
-        .services h2 { color: var(--secondary); margin-bottom: 50px; font-size: 2rem; }
-        .grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; }
-        .card:hover { transform: translateY(-10px); }
-        .card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
-        .card h3 { margin-bottom: 15px; color: var(--secondary); }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+        .logo i { color: var(--accent); font-size: 1.8rem; }
 
-        /* Diferenciais */
-        .features { padding: 80px 5%; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; }
-        .features-text { flex: 1; min-width: 300px; padding-right: 50px; }
-        .features-text h2 { color: var(--secondary); margin-bottom: 20px; }
-        .features-list li { margin-bottom: 15px; list-style: none; }
-        .features-list i { color: green; margin-right: 10px; }
-        .features-img { flex: 1; min-width: 300px; }
-        .features-img img { width: 100%; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        nav ul { display: flex; gap: 25px; align-items: center; }
+        nav a { font-weight: 500; color: var(--secondary); font-size: 0.95rem; }
+        nav a:hover { color: var(--accent); }
 
-        /* Rodapé */
-        footer { background: var(--secondary); color: white; padding: 50px 5%; text-align: center; }
-        .social-links { margin-top: 20px; }
-        .social-links a { color: white; margin: 0 10px; font-size: 1.5rem; }
+        .btn-admin {
+            padding: 8px 20px;
+            border: 2px solid var(--primary);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .btn-admin:hover { background: var(--primary); color: white; }
+
+        /* --- HERO (Banner Principal) --- */
+        .hero {
+            background: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 5%;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; max-width: 700px; margin-left: auto; margin-right: auto; }
+        
+        .cta-button {
+            background: var(--accent);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 15px -3px rgba(217, 119, 6, 0.4);
+        }
+        .cta-button:hover { transform: translateY(-3px); background: #b45309; }
+
+        /* --- SERVIÇOS --- */
+        .services { padding: 80px 10%; background: var(--white); }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { color: var(--primary); font-size: 2.2rem; margin-bottom: 10px; }
+        .section-title p { color: #64748b; }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 15px;
+            transition: 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); border-color: var(--accent); }
+        .service-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
+        .service-card h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.25rem; }
+        .service-card p { color: #64748b; font-size: 0.9rem; }
+
+        /* --- CONTATO E MAPA --- */
+        .contact-section { padding: 80px 5%; background: var(--primary); color: white; display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center; }
+        .contact-info h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; font-size: 1.2rem; }
+        .contact-item i { color: var(--accent); }
+
+        /* --- RODAPÉ --- */
+        footer { background: #020617; color: #94a3b8; padding: 40px 5%; text-align: center; font-size: 0.9rem; border-top: 1px solid #1e293b; }
+        
+        /* --- BOTÃO WHATSAPP FLUTUANTE --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .whatsapp-float:hover { background-color: #128c7e; }
+
+        /* Responsividade Celular */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            nav ul { display: none; } /* Simplificação para mobile */
+            .logo { font-size: 1.2rem; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo"><i class="fa-solid fa-file-signature"></i> Despachante Ágil</div>
+        <div class="logo">
+            <i class="fa-solid fa-file-contract"></i>
+            <div>
+                DESPACHANTE YTHALO
+                <span style="display:block; font-size:0.7rem; color:#64748b; font-weight:400;">SOLUÇÕES VEICULARES</span>
+            </div>
+        </div>
         <nav>
             <ul>
-                <li><a href="#home">Início</a></li>
                 <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="login.html" class="btn-login"><i class="fa-solid fa-lock"></i> Área Admin</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="login.html" class="btn-admin"><i class="fa-solid fa-lock"></i> Área Admin</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero" id="home">
-        <h1>Resolva a documentação do seu veículo sem sair de casa</h1>
-        <p>Regularização de IPVA, Licenciamento, Transferência e Multas. Rápido, seguro e 100% online.</p>
-        <a href="https://wa.me/seunumerodewhatsapp" class="cta-button">
-            <i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp
+    <section class="hero">
+        <h1>Regularize seu veículo<br>sem sair de casa</h1>
+        <p>Esqueça as filas e a burocracia do Detran. Resolvemos tudo para você com agilidade e segurança.</p>
+        
+        <a href="https://wa.me/5561998721896?text=Olá, vim pelo site e gostaria de um orçamento." class="cta-button" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Falar com Especialista
         </a>
     </section>
 
     <section class="services" id="servicos">
-        <h2>Nossos Serviços</h2>
-        <div class="grid-services">
-            <div class="card">
-                <i class="fa-solid fa-car-side"></i>
-                <h3>Licenciamento Anual</h3>
-                <p>Receba o documento digital (CRLV) no seu celular em poucas horas.</p>
+        <div class="section-title">
+            <h2>Como podemos ajudar?</h2>
+            <p>Serviços completos para carros, motos e caminhões.</p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-address-card"></i>
+                <h3>Licenciamento 2026</h3>
+                <p>Emitimos seu CRLV Digital atualizado para você rodar tranquilo e evitar apreensões.</p>
             </div>
-            <div class="card">
-                <i class="fa-solid fa-exchange-alt"></i>
+            <div class="service-card">
+                <i class="fa-solid fa-handshake"></i>
                 <h3>Transferência</h3>
-                <p>Processo completo de transferência de propriedade de veículos.</p>
+                <p>Processo completo de transferência de propriedade. Cuidamos de toda a papelada.</p>
             </div>
-            <div class="card">
-                <i class="fa-solid fa-file-invoice-dollar"></i>
-                <h3>Débitos e Multas</h3>
-                <p>Parcelamos seus débitos, IPVA e multas em até 12x no cartão.</p>
+            <div class="service-card">
+                <i class="fa-solid fa-money-bill-wave"></i>
+                <h3>Parcelamento de Débitos</h3>
+                <p>IPVA atrasado, multas e taxas? Parcelamos tudo em até 12x no cartão de crédito.</p>
             </div>
-            <div class="card">
-                <i class="fa-solid fa-id-card"></i>
+            <div class="service-card">
+                <i class="fa-solid fa-key"></i>
                 <h3>Primeiro Emplacamento</h3>
-                <p>Consultoria completa para veículos 0km saírem rodando regularizados.</p>
+                <p>Consultoria para veículos 0km. Saia da concessionária já regularizado.</p>
             </div>
         </div>
     </section>
 
-    <section class="features">
-        <div class="features-text">
-            <h2>Por que escolher nossos serviços?</h2>
-            <p>Sabemos que burocracia é chata. Por isso, cuidamos de tudo para você ter tempo livre.</p>
-            <br>
-            <ul class="features-list">
-                <li><i class="fa-solid fa-check-circle"></i> Atendimento 100% Online e Seguro</li>
-                <li><i class="fa-solid fa-check-circle"></i> Parcelamento facilitado no cartão</li>
-                <li><i class="fa-solid fa-check-circle"></i> Agilidade na entrega do documento</li>
-                <li><i class="fa-solid fa-check-circle"></i> Suporte especializado via WhatsApp</li>
-            </ul>
-        </div>
-        <div class="features-img">
-            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Carro na estrada">
+    <section class="contact-section" id="contato">
+        <div class="contact-info">
+            <h2>Precisa de agilidade?</h2>
+            <p style="margin-bottom: 30px; opacity: 0.8;">Atendemos todo o DF e região com rapidez.</p>
+            
+            <div class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>(61) 99872-1896</span>
+            </div>
+            <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>contato@despachanteythalo.com.br</span>
+            </div>
+            <div class="contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Atendimento Online e Presencial</span>
+            </div>
         </div>
     </section>
 
-    <footer id="contato">
-        <h3>Fale Conosco</h3>
-        <p>Segunda a Sexta: 08h às 18h</p>
-        <p><i class="fa-brands fa-whatsapp"></i> (11) 99999-9999</p>
-        <div class="social-links">
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-        </div>
-        <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.7;">&copy; 2026 Sistema Despachante. Todos os direitos reservados.</p>
+    <a href="https://wa.me/5561998721896?text=Olá, vim pelo site e gostaria de um orçamento." class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <p>&copy; 2026 Despachante Ythalo. Todos os direitos reservados.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">Sistema desenvolvido para facilitar sua vida.</p>
     </footer>
 
 </body>
